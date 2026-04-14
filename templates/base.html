@@ -1,9 +1,19 @@
+{% load i18n %}
 {% load static %}
 
 <html>
+<form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <select name="language" onchange="this.form.submit()">
+        <option value="ru">RU</option>
+        <option value="en">EN</option>
+        <option value="lt">LT</option>
+    </select>
+</form>
 <head>
     <title>ITDubov</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <script src="https://unpkg.com/htmx.org@1.9.6"></script>
 <body>
@@ -12,7 +22,7 @@
     <h1>ITDubov</h1>
 
     <nav>
-        <a href="/">Главная</a>
+        <a href="/">{% trans "Главная" %}</a>
         <a href="{% url 'blog_list' %}">Блог</a>
         <a href="{% url 'contact' %}">Контакты</a>
 
