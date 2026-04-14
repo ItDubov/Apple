@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
-<h1>🛒 Корзина</h1>
+<h1>🛒 {% trans "Корзина" %}</h1>
 
 {% for item in cart %}
     <div>
         <h3>{{ item.product.name }}</h3>
-        <p>Количество: {{ item.quantity }}</p>
-        <p>Цена: {{ item.total_price }} €</p>
+        <p>{% trans "Количество" %}: {{ item.quantity }}</p>
+        <p>{% trans "Цена" %}: {{ item.total_price }} €</p>
 
-        <a href="{% url 'cart_remove' item.product.id %}">Удалить</a>
+        <a href="{% url 'cart_remove' item.product.id %}">{% trans "Удалить" %}</a>
     </div>
 {% endfor %}
 
-<h2>Итого: {{ cart.get_total_price }} €</h2>
+<h2>{% trans "Итого" %}: {{ cart.get_total_price }} €</h2>
 
-<a href="{% url 'checkout' %}">Оформить заказ</a>
+<a href="{% url 'checkout' %}">{% trans "Оформить заказ" %}</a>
 
 {% endblock %}

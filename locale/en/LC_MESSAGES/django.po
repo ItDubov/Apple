@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-14 23:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\config\settings.py:121
+msgid "Russian"
+msgstr "Russian"
+
+#: .\config\settings.py:122
+msgid "English"
+msgstr "English"
+
+#: .\config\settings.py:123
+msgid "Lithuanian"
+msgstr "Lithuanian"
+
+#: .\shop\models.py:93
+msgid "Название"
+msgstr "Title"
+
+#: .\templates\base.html:30 .\templates\contact_success.html:4
+#: .\templates\success.html:5
+msgid "Главная"
+msgstr "Home"
+
+msgid "Блог"
+msgstr "Blog"
+
+msgid "Контакты"
+msgstr "Contacts"
+
+msgid "Корзина"
+msgstr "Cart"
+
+msgid "Количество"
+msgstr "Quantity"
+
+msgid "Цена"
+msgstr "Price"
+
+msgid "Удалить"
+msgstr "Remove"
+
+msgid "Итого"
+msgstr "Total"
+
+msgid "Оформить заказ"
+msgstr "Checkout"
+
+msgid "Оформление заказа"
+msgstr "Order checkout"
+
+msgid "Оплатить"
+msgstr "Pay"
+
+msgid "Отправить"
+msgstr "Send"
+
+msgid "Сообщение отправлено!"
+msgstr "Message sent!"
+
+msgid "Новинки"
+msgstr "New arrivals"
+
+msgid "Категории"
+msgstr "Categories"
+
+msgid "Смотреть все статьи"
+msgstr "View all posts"
+
+msgid "Память"
+msgstr "Memory"
+
+msgid "Цвет"
+msgstr "Color"
+
+msgid "Характеристики"
+msgstr "Specifications"
+
+msgid "Купить"
+msgstr "Buy"
+
+msgid "Спасибо за заказ"
+msgstr "Thank you for your order"
+
+msgid "Номер заказа"
+msgstr "Order number"

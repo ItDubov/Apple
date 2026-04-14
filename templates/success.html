@@ -1,7 +1,8 @@
-<h1>Спасибо за заказ!</h1>
-<p>Номер заказа: {{ order.id }}</p>
+{% load i18n %}
+<h1>{% trans "Спасибо за заказ" %}!</h1>
+<p>{% trans "Номер заказа" %}: {{ order.id }}</p>
 <nav>
-        <a href="/">Главная</a>
+        <a href="/">{% trans "Главная" %}</a>
 
         {% for category in categories %}
             <a href="#">{{ category.name }}</a>

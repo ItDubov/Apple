@@ -1,41 +1,60 @@
 {% load i18n %}
 {% load static %}
 
-<html>
-<form action="{% url 'set_language' %}" method="post">
-    {% csrf_token %}
-    <select name="language" onchange="this.form.submit()">
-        <option value="ru">RU</option>
-        <option value="en">EN</option>
-        <option value="lt">LT</option>
-    </select>
-</form>
-<head>
-    <title>ITDubov</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% get_current_language as LANGUAGE_CODE %}
 
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ITDubov</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<script src="https://unpkg.com/htmx.org@1.9.6"></script>
+
 <body>
 
 <header>
+
     <h1>ITDubov</h1>
+
+    <!-- 🌍 LANGUAGE SWITCHER -->
+    <form action="{% url 'set_language' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+
+        <!-- сохраняем текущую страницу -->
+        <input type="hidden" name="next" value="{{ request.path }}">
+
+        <select name="language" onchange="this.form.submit()">
+
+            <option value="ru" {% if LANGUAGE_CODE == "ru" %}selected{% endif %}>RU</option>
+            <option value="en" {% if LANGUAGE_CODE == "en" %}selected{% endif %}>EN</option>
+            <option value="lt" {% if LANGUAGE_CODE == "lt" %}selected{% endif %}>LT</option>
+
+        </select>
+    </form>
 
     <nav>
         <a href="/">{% trans "Главная" %}</a>
-        <a href="{% url 'blog_list' %}">Блог</a>
-        <a href="{% url 'contact' %}">Контакты</a>
+        <a href="{% url 'blog_list' %}">{% trans "Блог" %}</a>
+        <a href="{% url 'contact' %}">{% trans "Контакты" %}</a>
 
         {% for category in categories %}
             <a href="#">{{ category.name }}</a>
         {% endfor %}
     </nav>
+
 </header>
 
 <hr>
 
 {% block content %}
 {% endblock %}
+
+<script src="https://unpkg.com/htmx.org@1.9.6"></script>
 
 </body>
 </html>

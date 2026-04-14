@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-14 23:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+msgid "Russian"
+msgstr "Rusų"
+
+msgid "English"
+msgstr "Anglų"
+
+msgid "Lithuanian"
+msgstr "Lietuvių"
+
+msgid "Название"
+msgstr "Pavadinimas"
+
+msgid "Главная"
+msgstr "Pagrindinis"
+
+msgid "Блог"
+msgstr "Tinklaraštis"
+
+msgid "Контакты"
+msgstr "Kontaktai"
+
+msgid "Корзина"
+msgstr "Krepšelis"
+
+msgid "Количество"
+msgstr "Kiekis"
+
+msgid "Цена"
+msgstr "Kaina"
+
+msgid "Удалить"
+msgstr "Ištrinti"
+
+msgid "Итого"
+msgstr "Iš viso"
+
+msgid "Оформить заказ"
+msgstr "Atsiskaityti"
+
+msgid "Оформление заказа"
+msgstr "Užsakymo pateikimas"
+
+msgid "Оплатить"
+msgstr "Apmokėti"
+
+msgid "Отправить"
+msgstr "Siųsti"
+
+msgid "Сообщение отправлено!"
+msgstr "Žinutė išsiųsta!"
+
+msgid "Новинки"
+msgstr "Naujienos"
+
+msgid "Категории"
+msgstr "Kategorijos"
+
+msgid "Смотреть все статьи"
+msgstr "Peržiūrėti visus straipsnius"
+
+msgid "Память"
+msgstr "Atmintis"
+
+msgid "Цвет"
+msgstr "Spalva"
+
+msgid "Характеристики"
+msgstr "Specifikacijos"
+
+msgid "Купить"
+msgstr "Pirkti"
+
+msgid "Спасибо за заказ"
+msgstr "Ačiū už užsakymą"
+
+msgid "Номер заказа"
+msgstr "Užsakymo numeris"

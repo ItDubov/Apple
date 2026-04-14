@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
 <h1>{{ product.name }}</h1>
@@ -26,7 +27,7 @@
         </h2>
 
         <!-- ВЫБОР ПАМЯТИ -->
-        <label>Память:</label>
+        <label>{% trans "Память" %}:</label>
         <select name="memory"
                 hx-get="{% url 'update_price' product.slug %}"
                 hx-target="#price-block"
@@ -37,7 +38,7 @@
         </select>
 
         <!-- ВЫБОР ЦВЕТА -->
-        <label>Цвет:</label>
+        <label>{% trans "Цвет" %}:</label>
         <select name="color"
                 hx-get="{% url 'update_price' product.slug %}"
                 hx-target="#price-block"
@@ -48,11 +49,11 @@
 
         <p>{{ product.description }}</p>
 
-        <h3>Характеристики</h3>
+        <h3>{% trans "Характеристики" %}</h3>
         <pre>{{ product.characteristics }}</pre>
 
         <a href="{% url 'cart_add' product.id %}">
-        <button>🛒 Купить</button>
+        <button>🛒 {% trans "Купить" %}</button>
         </a>
 
     </div>
