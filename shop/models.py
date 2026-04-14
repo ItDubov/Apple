@@ -17,6 +17,9 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
 
+    memory = models.CharField(max_length=50, blank=True)
+    color = models.CharField(max_length=50, blank=True)
+
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
 

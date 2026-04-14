@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ product.name }}</h1>
+
+<div style="display:flex; gap:40px;">
+
+    <!-- ГАЛЕРЕЯ -->
+    <div>
+        <img id="mainImage" src="{{ product.image.url }}" width="300">
+
+        <div>
+            {% for img in product.images.all %}
+                <img src="{{ img.image.url }}" width="60"
+                     onclick="document.getElementById('mainImage').src=this.src">
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- ИНФОРМАЦИЯ -->
+    <div>
+
+        <!-- ДИНАМИЧЕСКАЯ ЦЕНА -->
+        <h2 id="price-block">
+            {% include 'partials/price.html' with price=product.price %}
+        </h2>
+
+        <!-- ВЫБОР ПАМЯТИ -->
+        <label>Память:</label>
+        <select name="memory"
+                hx-get="{% url 'update_price' product.slug %}"
+                hx-target="#price-block"
+                hx-trigger="change">
+            <option value="128">128GB</option>
+            <option value="256">256GB</option>
+            <option value="512">512GB</option>
+        </select>
+
+        <!-- ВЫБОР ЦВЕТА -->
+        <label>Цвет:</label>
+        <select name="color"
+                hx-get="{% url 'update_price' product.slug %}"
+                hx-target="#price-block"
+                hx-trigger="change">
+            <option value="black">Black</option>
+            <option value="white">White</option>
+        </select>
+
+        <p>{{ product.description }}</p>
+
+        <h3>Характеристики</h3>
+        <pre>{{ product.characteristics }}</pre>
+
+        <button>🛒 Купить</button>
+
+    </div>
+
+</div>
+
+{% endblock %}

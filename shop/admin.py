@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, Order, OrderItem, Blog
+from .models import Category, Product, Order, OrderItem, Blog, ProductImage
 from django.utils.html import format_html
 
 
@@ -10,6 +10,9 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name',)
 
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+    extra = 3
 
 # 📱 PRODUCT
 @admin.register(Product)
@@ -19,6 +22,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ('price', 'available')
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name', 'description')
+    inlines = [ProductImageInline]
 
     def image_preview(self, obj):
         if obj.image:

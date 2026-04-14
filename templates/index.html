@@ -7,8 +7,10 @@
 <div class="products">
     {% for product in products %}
         <div class="card">
-            <img src="{{ product.image.url }}" width="150">
-            <h3>{{ product.name }}</h3>
+            <a href="{% url 'product_detail' product.slug %}">
+    <img src="{{ product.image.url }}" width="150">
+    <h3>{{ product.name }}</h3>
+</a>
             <p>{{ product.price }} €</p>
         </div>
     {% endfor %}
