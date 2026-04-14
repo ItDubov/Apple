@@ -48,6 +48,10 @@ class Order(models.Model):
         return f'Order {self.id}'
 
 
+    def get_total_cost(self):
+        return sum(item.price * item.quantity for item in self.items.all())
+
+
 # 📦 ПОЗИЦИЯ ЗАКАЗА
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
