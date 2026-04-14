@@ -1,0 +1,28 @@
+{% load static %}
+
+<html>
+<head>
+    <title>ITDubov</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>ITDubov</h1>
+
+    <nav>
+        <a href="/">Главная</a>
+
+        {% for category in categories %}
+            <a href="#">{{ category.name }}</a>
+        {% endfor %}
+    </nav>
+</header>
+
+<hr>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🔥 Новинки</h2>
+
+<div class="products">
+    {% for product in products %}
+        <div class="card">
+            <img src="{{ product.image.url }}" width="150">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.price }} €</p>
+        </div>
+    {% endfor %}
+</div>
+
+
+<h2>📂 Категории</h2>
+
+<div>
+    {% for category in categories %}
+        <div>{{ category.name }}</div>
+    {% endfor %}
+</div>
+
+
+<h2>📝 Блог</h2>
+
+<div>
+    {% for blog in blogs %}
+        <div>
+            <h3>{{ blog.title }}</h3>
+            <p>{{ blog.created_at }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
