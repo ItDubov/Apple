@@ -25,16 +25,20 @@
     {% endfor %}
 </div>
 
-
 <h2>📝 Блог</h2>
 
 <div>
     {% for blog in blogs %}
         <div>
-            <h3>{{ blog.title }}</h3>
-            <p>{{ blog.created_at }}</p>
+            <h3>
+                <a href="{% url 'blog_detail' blog.slug %}">
+                    {{ blog.title }}
+                </a>
+            </h3>
         </div>
     {% endfor %}
 </div>
+
+<a href="{% url 'blog_list' %}">Смотреть все статьи</a>
 
 {% endblock %}

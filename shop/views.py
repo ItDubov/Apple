@@ -3,8 +3,9 @@ from .models import Category, Product, Blog, OrderItem
 from django.shortcuts import get_object_or_404
 from .cart import Cart
 from django.shortcuts import redirect
-from .forms import OrderForm
+from .forms import OrderForm, ContactForm
 from .utils import send_order_email
+from django.core.mail import send_mail
 
 
 def home(request):
@@ -82,3 +83,34 @@ def checkout(request):
         form = OrderForm()
 
     return render(request, 'checkout.html', {'form': form})
+
+#Контакты
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+            data = form.cleaned_data
+
+            send_mail(
+                subject=f"Сообщение от {data['name']}",
+                message=data['message'],
+                from_email=data['email'],
+                recipient_list=['admin@email.com'],
+            )
+
+            return render(request, 'contact_success.html')
+
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
+
+#Блог
+def blog_list(request):
+    blogs = Blog.objects.filter(published=True).order_by('-created_at')
+    return render(request, 'blog_list.html', {'blogs': blogs})
+
+def blog_detail(request, slug):
+    blog = get_object_or_404(Blog, slug=slug, published=True)
+    return render(request, 'blog_detail.html', {'blog': blog})

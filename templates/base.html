@@ -13,6 +13,8 @@
 
     <nav>
         <a href="/">Главная</a>
+        <a href="{% url 'blog_list' %}">Блог</a>
+        <a href="{% url 'contact' %}">Контакты</a>
 
         {% for category in categories %}
             <a href="#">{{ category.name }}</a>
