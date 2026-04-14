@@ -51,7 +51,9 @@
         <h3>Характеристики</h3>
         <pre>{{ product.characteristics }}</pre>
 
+        <a href="{% url 'cart_add' product.id %}">
         <button>🛒 Купить</button>
+        </a>
 
     </div>
 

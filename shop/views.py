@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from .models import Category, Product, Blog
+from .models import Category, Product, Blog, OrderItem
 from django.shortcuts import get_object_or_404
+from .cart import Cart
+from django.shortcuts import redirect
+from .forms import OrderForm
+from .utils import send_order_email
 
 
 def home(request):
@@ -35,3 +39,46 @@ def update_price(request, slug):
         price += 200
 
     return render(request, 'partials/price.html', {'price': price})
+# Корзина
+def cart_detail(request):
+    cart = Cart(request)
+    return render(request, 'cart.html', {'cart': cart})
+
+
+def cart_add(request, product_id):
+    cart = Cart(request)
+    cart.add(product_id=product_id)
+    return redirect('cart_detail')
+
+
+def cart_remove(request, product_id):
+    cart = Cart(request)
+    cart.remove(product_id)
+    return redirect('cart_detail')
+
+# Оформление заказа
+def checkout(request):
+    cart = Cart(request)
+
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+
+        if form.is_valid():
+            order = form.save()
+
+            for item in cart:
+                OrderItem.objects.create(
+                    order=order,
+                    product=item['product'],
+                    price=item['product'].price,
+                    quantity=item['quantity']
+                )
+
+            send_order_email(order)
+            request.session['cart'] = {}
+
+            return render(request, 'success.html', {'order': order})
+    else:
+        form = OrderForm()
+
+    return render(request, 'checkout.html', {'form': form})
