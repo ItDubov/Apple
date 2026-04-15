@@ -8,6 +8,7 @@ from .views import (home,
                     contact,
                     blog_list,
                     blog_detail,
+                    filter_products,
                     cart_remove)
 
 urlpatterns = [
@@ -21,4 +22,5 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('blog/', blog_list, name='blog_list'),
     path('blog/<slug:slug>/', blog_detail, name='blog_detail'),
+    path('filter-products/', filter_products, name='filter_products'),
 ]

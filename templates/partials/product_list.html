@@ -1,0 +1,11 @@
+{% for product in products %}
+    <a href="{% url 'product_detail' product.slug %}" class="card-link">
+        <div class="card">
+            <img src="{{ product.image.url }}" width="150">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.price }} €</p>
+        </div>
+    </a>
+{% empty %}
+    <p>Нет товаров</p>
+{% endfor %}

@@ -49,7 +49,10 @@ def cart_detail(request):
 def cart_add(request, product_id):
     cart = Cart(request)
     cart.add(product_id=product_id)
-    return redirect('cart_detail')
+
+    return render(request, 'partials/cart_count.html', {
+        'cart': cart
+    })
 
 
 def cart_remove(request, product_id):
@@ -114,3 +117,15 @@ def blog_list(request):
 def blog_detail(request, slug):
     blog = get_object_or_404(Blog, slug=slug, published=True)
     return render(request, 'blog_detail.html', {'blog': blog})
+
+def filter_products(request):
+    category_id = request.GET.get('category')
+
+    products = Product.objects.all()
+
+    if category_id:
+        products = products.filter(category_id=category_id)
+
+    return render(request, 'partials/product_list.html', {
+        'products': products
+    })

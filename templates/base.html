@@ -38,6 +38,11 @@
     </form>
 
     <nav>
+        <a href="{% url 'cart_detail' %}">
+    🛒 <span id="cart-count">
+        {{ request.session.cart|length|default:0 }}
+        </span>
+        </a>
         <a href="/">{% trans "Главная" %}</a>
         <a href="{% url 'blog_list' %}">{% trans "Блог" %}</a>
         <a href="{% url 'contact' %}">{% trans "Контакты" %}</a>

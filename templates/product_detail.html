@@ -1,60 +1,70 @@
 {% extends 'base.html' %}
 {% load i18n %}
+
 {% block content %}
 
 <h1>{{ product.name }}</h1>
 
 <div style="display:flex; gap:40px;">
 
-    <!-- ГАЛЕРЕЯ -->
+    <!-- 📸 ГАЛЕРЕЯ -->
     <div>
         <img id="mainImage" src="{{ product.image.url }}" width="300">
 
         <div>
             {% for img in product.images.all %}
                 <img src="{{ img.image.url }}" width="60"
+                     style="cursor:pointer;"
                      onclick="document.getElementById('mainImage').src=this.src">
             {% endfor %}
         </div>
     </div>
 
-    <!-- ИНФОРМАЦИЯ -->
+    <!-- 📦 ИНФОРМАЦИЯ -->
     <div>
 
-        <!-- ДИНАМИЧЕСКАЯ ЦЕНА -->
+        <!-- 💰 ДИНАМИЧЕСКАЯ ЦЕНА -->
         <h2 id="price-block">
             {% include 'partials/price.html' with price=product.price %}
         </h2>
 
-        <!-- ВЫБОР ПАМЯТИ -->
-        <label>{% trans "Память" %}:</label>
-        <select name="memory"
-                hx-get="{% url 'update_price' product.slug %}"
-                hx-target="#price-block"
-                hx-trigger="change">
-            <option value="128">128GB</option>
-            <option value="256">256GB</option>
-            <option value="512">512GB</option>
-        </select>
+        <!-- ⚙️ ФОРМА ПАРАМЕТРОВ (HTMX) -->
+        <form
+            hx-get="{% url 'update_price' product.slug %}"
+            hx-target="#price-block"
+            hx-trigger="change"
+        >
 
-        <!-- ВЫБОР ЦВЕТА -->
-        <label>{% trans "Цвет" %}:</label>
-        <select name="color"
-                hx-get="{% url 'update_price' product.slug %}"
-                hx-target="#price-block"
-                hx-trigger="change">
-            <option value="black">Black</option>
-            <option value="white">White</option>
-        </select>
+            <!-- ПАМЯТЬ -->
+            <label>{% trans "Память" %}:</label>
+            <select name="memory">
+                <option value="128">128GB</option>
+                <option value="256">256GB</option>
+                <option value="512">512GB</option>
+            </select>
+
+            <!-- ЦВЕТ -->
+            <label>{% trans "Цвет" %}:</label>
+            <select name="color">
+                <option value="black">Black</option>
+                <option value="white">White</option>
+            </select>
+
+        </form>
 
         <p>{{ product.description }}</p>
 
         <h3>{% trans "Характеристики" %}</h3>
         <pre>{{ product.characteristics }}</pre>
 
-        <a href="{% url 'cart_add' product.id %}">
-        <button>🛒 {% trans "Купить" %}</button>
-        </a>
+        <!-- 🛒 ДОБАВИТЬ В КОРЗИНУ (HTMX) -->
+        <button
+            hx-get="{% url 'cart_add' product.id %}"
+            hx-target="#cart-count"
+            hx-swap="outerHTML"
+        >
+            🛒 {% trans "Купить" %}
+        </button>
 
     </div>
 

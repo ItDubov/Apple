@@ -5,18 +5,29 @@
 
 <h2>🔥 {% trans "Новинки" %}</h2>
 
-<div class="products">
-    {% for product in products %}
-        <div class="card">
-            <a href="{% url 'product_detail' product.slug %}">
-    <img src="{{ product.image.url }}" width="150">
-    <h3>{{ product.name }}</h3>
-</a>
-            <p>{{ product.price }} €</p>
-        </div>
+<!-- 🔍 ФИЛЬТР ТОВАРОВ -->
+<select
+    name="category"
+    hx-get="{% url 'filter_products' %}"
+    hx-target="#products"
+    hx-trigger="change"
+    hx-swap="innerHTML"
+>
+    <option value="">{% trans "Категории" %}</option>
+
+    {% for category in categories %}
+        <option value="{{ category.id }}">
+            {{ category.name }}
+        </option>
     {% endfor %}
+</select>
+
+<!-- 📦 СПИСОК ТОВАРОВ -->
+<div id="products" class="products">
+    {% include 'partials/product_list.html' %}
 </div>
 
+<hr>
 
 <h2>📂 {% trans "Категории" %}</h2>
 
@@ -25,6 +36,8 @@
         <div>{{ category.name }}</div>
     {% endfor %}
 </div>
+
+<hr>
 
 <h2>📝 {% trans "Блог" %}</h2>
 
@@ -40,6 +53,8 @@
     {% endfor %}
 </div>
 
-<a href="{% url 'blog_list' %}">{% trans "Смотреть все статьи" %}</a>
+<a href="{% url 'blog_list' %}">
+    {% trans "Смотреть все статьи" %}
+</a>
 
 {% endblock %}
