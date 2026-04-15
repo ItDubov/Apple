@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.core.cache import cache
 
 
 # 📁 КАТЕГОРИИ
@@ -13,6 +14,10 @@ class Category(models.Model):
 
 # 📱 ТОВАРЫ
 class Product(models.Model):
+    def save(self, *args, **kwargs):
+        cache.delete('products')
+        super().save(*args, **kwargs)
+
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
 
     name = models.CharField(max_length=255)

@@ -1,24 +1,38 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Product, Blog, OrderItem
-from django.shortcuts import get_object_or_404
 from .cart import Cart
-from django.shortcuts import redirect
 from .forms import OrderForm, ContactForm
 from .utils import send_order_email
 from django.core.mail import send_mail
+from django.core.cache import cache
 
 
-def home(request):
-    categories = Category.objects.all()
-    products = Product.objects.filter(available=True)[:8]
-    blogs = Blog.objects.filter(published=True).order_by('-created_at')[:4]
+# 🏠 ГЛАВНАЯ (с кэшем)
+def index(request):
+    products = cache.get('products')
+    categories = cache.get('categories')
+    blogs = cache.get('blogs')
+
+    if not products:
+        products = Product.objects.filter(available=True)[:8]
+        cache.set('products', products, 60 * 10)
+
+    if not categories:
+        categories = Category.objects.all()
+        cache.set('categories', categories, 60 * 60)
+
+    if not blogs:
+        blogs = Blog.objects.filter(published=True).order_by('-created_at')[:4]
+        cache.set('blogs', blogs, 60 * 10)
 
     return render(request, 'index.html', {
-        'categories': categories,
         'products': products,
+        'categories': categories,
         'blogs': blogs
     })
 
+
+# 📱 ТОВАР
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
 
@@ -26,21 +40,24 @@ def product_detail(request, slug):
         'product': product
     })
 
+
+# 💰 ДИНАМИЧЕСКАЯ ЦЕНА
 def update_price(request, slug):
     product = get_object_or_404(Product, slug=slug)
 
     memory = request.GET.get('memory')
-    color = request.GET.get('color')
 
     price = product.price
 
     if memory == '256':
         price += 100
-    if memory == '512':
+    elif memory == '512':
         price += 200
 
     return render(request, 'partials/price.html', {'price': price})
-# Корзина
+
+
+# 🛒 КОРЗИНА
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'cart.html', {'cart': cart})
@@ -60,7 +77,8 @@ def cart_remove(request, product_id):
     cart.remove(product_id)
     return redirect('cart_detail')
 
-# Оформление заказа
+
+# 💳 ОФОРМЛЕНИЕ ЗАКАЗА
 def checkout(request):
     cart = Cart(request)
 
@@ -87,7 +105,8 @@ def checkout(request):
 
     return render(request, 'checkout.html', {'form': form})
 
-#Контакты
+
+# 📩 КОНТАКТЫ
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -103,25 +122,28 @@ def contact(request):
             )
 
             return render(request, 'contact_success.html')
-
     else:
         form = ContactForm()
 
     return render(request, 'contact.html', {'form': form})
 
-#Блог
+
+# 📝 БЛОГ
 def blog_list(request):
     blogs = Blog.objects.filter(published=True).order_by('-created_at')
     return render(request, 'blog_list.html', {'blogs': blogs})
+
 
 def blog_detail(request, slug):
     blog = get_object_or_404(Blog, slug=slug, published=True)
     return render(request, 'blog_detail.html', {'blog': blog})
 
+
+# 🔍 ФИЛЬТР (HTMX)
 def filter_products(request):
     category_id = request.GET.get('category')
 
-    products = Product.objects.all()
+    products = Product.objects.filter(available=True)
 
     if category_id:
         products = products.filter(category_id=category_id)

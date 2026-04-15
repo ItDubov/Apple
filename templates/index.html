@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load cache %}
+
+{% cache 300 product_list %}
+    {% include 'partials/product_list.html' %}
+{% endcache %}
 
 {% block content %}
 
