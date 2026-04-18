@@ -2,64 +2,40 @@
 {% load i18n %}
 {% load cache %}
 
-{% cache 300 product_list %}
-    {% include 'partials/product_list.html' %}
-{% endcache %}
-
 {% block content %}
 
-<h2>🔥 {% trans "Новинки" %}</h2>
+<!-- 🧠 HEADER SECTION -->
+<div style="padding: 24px 40px 10px;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 600;">
+        🔥 {% trans "Новинки" %}
+    </h2>
+    <p style="margin: 6px 0 0; color: #777; font-size: 14px;">
+        {% trans "Свежие товары из каталога" %}
+    </p>
+</div>
 
-<!-- 🔍 ФИЛЬТР ТОВАРОВ -->
-<select
-    name="category"
-    hx-get="{% url 'filter_products' %}"
-    hx-target="#products"
-    hx-trigger="change"
-    hx-swap="innerHTML"
->
-    <option value="">{% trans "Категории" %}</option>
+<!-- 🔍 FILTER -->
+<div style="padding: 10px 40px;">
+    <select
+        name="category"
+        hx-get="{% url 'filter_products' %}"
+        hx-target="#products"
+        hx-trigger="change"
+        hx-swap="innerHTML"
+    >
+        <option value="">{% trans "Все категории" %}</option>
 
-    {% for category in categories %}
-        <option value="{{ category.id }}">
-            {{ category.name }}
-        </option>
-    {% endfor %}
-</select>
+        {% for category in categories %}
+            <option value="{{ category.id }}">
+                {{ category.name }}
+            </option>
+        {% endfor %}
+    </select>
+</div>
 
-<!-- 📦 СПИСОК ТОВАРОВ -->
+<!-- 📦 PRODUCTS -->
 <div id="products" class="products">
     {% include 'partials/product_list.html' %}
 </div>
-
-<hr>
-
-<h2>📂 {% trans "Категории" %}</h2>
-
-<div>
-    {% for category in categories %}
-        <div>{{ category.name }}</div>
-    {% endfor %}
-</div>
-
-<hr>
-
-<h2>📝 {% trans "Блог" %}</h2>
-
-<div>
-    {% for blog in blogs %}
-        <div>
-            <h3>
-                <a href="{% url 'blog_detail' blog.slug %}">
-                    {{ blog.title }}
-                </a>
-            </h3>
-        </div>
-    {% endfor %}
-</div>
-
-<a href="{% url 'blog_list' %}">
-    {% trans "Смотреть все статьи" %}
-</a>
 
 {% endblock %}
