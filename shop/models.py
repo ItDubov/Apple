@@ -1,12 +1,24 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.cache import cache
+from django.utils.text import slugify
 
 
 # 📁 КАТЕГОРИИ
 class Category(models.Model):
-    name = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+    name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(unique=True, blank=True)
+
+    class Meta:
+        verbose_name = _("Категория")
+        verbose_name_plural = _("Категории")
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        cache.delete("categories")
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -14,31 +26,54 @@ class Category(models.Model):
 
 # 📱 ТОВАРЫ
 class Product(models.Model):
-    def save(self, *args, **kwargs):
-        cache.delete('products')
-        super().save(*args, **kwargs)
-
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.CASCADE,
+        related_name="products"
+    )
 
     name = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)
 
+    # характеристики (опционально)
     memory = models.CharField(max_length=50, blank=True)
     color = models.CharField(max_length=50, blank=True)
 
-    description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.TextField(blank=True)
 
+    # 💰 цены
+    price = models.PositiveIntegerField()
+    discount_price = models.PositiveIntegerField(null=True, blank=True)
+
+    # JSON характеристики
     characteristics = models.JSONField(blank=True, null=True)
 
-    image = models.ImageField(upload_to='products/')
+    # 📸 ВАЖНО: URL, а не ImageField
+    image = models.URLField(blank=True, null=True)
+
+    # ссылка на источник (очень полезно)
+    source_url = models.URLField(blank=True, null=True)
+
     available = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.name
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = _("Товар")
+        verbose_name_plural = _("Товары")
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        # сброс кэша
+        cache.delete("products")
+
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.name} ({self.category.name})"
 
 # 🛒 ЗАКАЗ
 class Order(models.Model):
@@ -90,7 +125,7 @@ class Blog(models.Model):
 # 📸 ДОПОЛНИТЕЛЬНЫЕ ИЗОБРАЖЕНИЯ
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='products/')
+    image = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return f'Image for {self.product.name}'

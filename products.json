@@ -1,0 +1,989 @@
+[
+    {
+        "name": "Apple Watch SE 3 40mm",
+        "category": "AppleWatch",
+        "price": "От 26 490 ₽",
+        "discount_price": "От 22 990 ₽",
+        "image": "https://appface.store/uploads/products/product_138_69c53296dd704.png"
+    },
+    {
+        "name": "iPhone 17 Pro Max 1T (Физ-сим+eSIM)",
+        "category": "iPhone",
+        "price": "От 171 490 ₽",
+        "discount_price": "От 148 990 ₽",
+        "image": "https://appface.store/uploads/products/product_92_69c4f63c919c2.png"
+    },
+    {
+        "name": "Apple EarPods USB-C",
+        "category": "Аксессуары",
+        "price": "От 3 490 ₽",
+        "discount_price": "От 3 490 ₽",
+        "image": "https://appface.store/uploads/products/product_157_69c51a024d12b.png"
+    },
+    {
+        "name": "iPhone 17 Pro 512 Gb (eSIM)",
+        "category": "iPhone",
+        "price": "От 127 990 ₽",
+        "discount_price": "От 110 990 ₽",
+        "image": "https://appface.store/uploads/products/product_96_69c4f737ce930.png"
+    },
+    {
+        "name": "iPhone 17 Pro Max 2 T (Физ-сим+eSIM)",
+        "category": "iPhone",
+        "price": "От 206 990 ₽",
+        "discount_price": "От 179 990 ₽",
+        "image": "https://appface.store/uploads/products/product_94_69c4f6c84eee8.png"
+    },
+    {
+        "name": "Apple Watch Series 11 46mm",
+        "category": "AppleWatch",
+        "price": "От 35 990 ₽",
+        "discount_price": "От 30 990 ₽",
+        "image": "https://appface.store/uploads/products/product_132_69c50fbd7a4ee.webp"
+    },
+    {
+        "name": "iMac 24 M4 Retina 4K (10c CPU/10c GPU16/256Gb)",
+        "category": "iMac",
+        "price": "От 193 990 ₽",
+        "discount_price": "От 168 490 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_50_69c0ec998e613.png"
+    },
+    {
+        "name": "Защитные стекла Remax Антишпион",
+        "category": "Аксессуары",
+        "price": "От 1 400 ₽",
+        "discount_price": "От 1 400 ₽",
+        "image": "https://appface.store/uploads/products/product_175_69c5255ea4a70.webp"
+    },
+    {
+        "name": "iPad Air 13 M3 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 72 490 ₽",
+        "discount_price": "От 62 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_59_69c0fba519baa.png"
+    },
+    {
+        "name": "Пылесос Dyson V8",
+        "category": "Dyson",
+        "price": "От 33 490 ₽",
+        "discount_price": "От 28 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_35_69c00a056b697.png"
+    },
+    {
+        "name": "iPhone 13 128Gb",
+        "category": "iPhone",
+        "price": "От 49 490 ₽",
+        "discount_price": "От 42 990 ₽",
+        "image": "https://appface.store/uploads/products/product_114_69c502c1335a6.webp"
+    },
+    {
+        "name": "Сетевое зарядное устройство VLP",
+        "category": "Аксессуары",
+        "price": "От 2 490 ₽",
+        "discount_price": "От 2 490 ₽",
+        "image": "https://appface.store/uploads/products/product_168_69c522deb600d.png"
+    },
+    {
+        "name": "Яндекс Станция Миди (с часами)",
+        "category": "Аксессуары",
+        "price": "От 16 490 ₽",
+        "discount_price": "От 13 990 ₽",
+        "image": "https://appface.store/uploads/products/product_152_69c517f45255f.png"
+    },
+    {
+        "name": "iPhone 17 Pro 256 Gb (Физ-сим+eSIM)",
+        "category": "iPhone",
+        "price": "От 121 990 ₽",
+        "discount_price": "От 105 990 ₽",
+        "image": "https://appface.store/uploads/products/product_95_69c4f7173b507.png"
+    },
+    {
+        "name": "iMac 24 M4 Retina 4K (10c CPU/10c GPU16/256Gb)",
+        "category": "iMac",
+        "price": "От 193 990 ₽",
+        "discount_price": "От 168 490 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_50_69c0ec998e613.png"
+    },
+    {
+        "name": "iPhone 17 Pro Max 256 Gb (eSIM)",
+        "category": "iPhone",
+        "price": "От 123 490 ₽",
+        "discount_price": "От 106 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_74_69c109d7ad5d6.png"
+    },
+    {
+        "name": "iPhone 17 512 GB",
+        "category": "iPhone",
+        "price": "От 103 490 ₽",
+        "discount_price": "От 89 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_58_69c0f28f54ce6.png"
+    },
+    {
+        "name": "Apple Pencil 2",
+        "category": "Аксессуары",
+        "price": "От 14 490 ₽",
+        "discount_price": "От 12 490 ₽",
+        "image": "https://appface.store/uploads/products/product_181_69c52b745e8ab.png"
+    },
+    {
+        "name": "Apple Watch Ultra 2 49mm 2024",
+        "category": "AppleWatch",
+        "price": "От 65 990 ₽",
+        "discount_price": "От 56 990 ₽",
+        "image": "https://appface.store/uploads/products/product_121_69c50ba3bd507.webp"
+    },
+    {
+        "name": "Apple Adapter 20W",
+        "category": "Аксессуары",
+        "price": "От 2 490 ₽",
+        "discount_price": "От 2 490 ₽",
+        "image": "https://appface.store/uploads/products/product_167_69c521e395189.png"
+    },
+    {
+        "name": "MacBook Pro 16 M4 Max 48Gb/1Tb",
+        "category": "MacBook",
+        "price": "От 503 990 ₽",
+        "discount_price": "От 437 990 ₽",
+        "image": "https://appface.store/uploads/products/product_144_69c512b8ef130.png"
+    },
+    {
+        "name": "AirPods Pro 3",
+        "category": "AirPods",
+        "price": "От 25 490 ₽",
+        "discount_price": "От 21 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_19_69c00646006d8.webp"
+    },
+    {
+        "name": "Фен Dyson Supersonic HD16",
+        "category": "Dyson",
+        "price": "От 40 490 ₽",
+        "discount_price": "От 34 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_29_69bfff1b524d7.png"
+    },
+    {
+        "name": "MacBook Air 13 M4 16/512Gb",
+        "category": "MacBook",
+        "price": "От 113 990 ₽",
+        "discount_price": "От 98 990 ₽",
+        "image": "https://appface.store/uploads/products/product_126_69c50e5ba8955.png"
+    },
+    {
+        "name": "Apple Pencil Pro",
+        "category": "Аксессуары",
+        "price": "От 15 990 ₽",
+        "discount_price": "От 13 490 ₽",
+        "image": "https://appface.store/uploads/products/product_182_69c52b97a3e1b.png"
+    },
+    {
+        "name": "iPad 11\" 2025 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 35 990 ₽",
+        "discount_price": "От 30 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_68_69c1005c640a3.png"
+    },
+    {
+        "name": "iPhone 17 Pro Max 1T (eSIM)",
+        "category": "iPhone",
+        "price": "От 151 990 ₽",
+        "discount_price": "От 131 990 ₽",
+        "image": "https://appface.store/uploads/products/product_91_69c4f61116fd2.png"
+    },
+    {
+        "name": "iPad Pro 13\" M5 256Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 121 990 ₽",
+        "discount_price": "От 105 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_53_69c0ee8abf644.png"
+    },
+    {
+        "name": "PlayStation 5 Pro",
+        "category": "PlayStation",
+        "price": "От 96 990 ₽",
+        "discount_price": "От 83 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_38_69c00fc97150d.png"
+    },
+    {
+        "name": "MacBook Air 13 M4 24/512Gb",
+        "category": "MacBook",
+        "price": "От 150 990 ₽",
+        "discount_price": "От 130 990 ₽",
+        "image": "https://appface.store/uploads/products/product_127_69c50e908cf46.png"
+    },
+    {
+        "name": "MacBook Neo 8/512Gb",
+        "category": "MacBook",
+        "price": "От 74 990 ₽",
+        "discount_price": "От 64 990 ₽",
+        "image": "https://appface.store/uploads/products/product_122_69c50c5840a56.png"
+    },
+    {
+        "name": "Major 5",
+        "category": "Аксессуары",
+        "price": "От 11 490 ₽",
+        "discount_price": "От 9 990 ₽",
+        "image": "https://appface.store/uploads/products/product_119_69c5084dddb4f.png"
+    },
+    {
+        "name": "MacBook Pro 16 M4 Max 36Gb/1Tb",
+        "category": "MacBook",
+        "price": "От 437 990 ₽",
+        "discount_price": "От 380 490 ₽",
+        "image": "https://appface.store/uploads/products/product_143_69c5129e0f382.png"
+    },
+    {
+        "name": "Зарядка MagSafe Charger",
+        "category": "Аксессуары",
+        "price": "От 6 490 ₽",
+        "discount_price": "От 6 490 ₽",
+        "image": "https://appface.store/uploads/products/product_163_69c520c4b3319.png"
+    },
+    {
+        "name": "Яндекс Станция Стрит",
+        "category": "Аксессуары",
+        "price": "От 12 990 ₽",
+        "discount_price": "От 10 990 ₽",
+        "image": "https://appface.store/uploads/products/product_151_69c51748bfb0f.png"
+    },
+    {
+        "name": "iPhone 17 Pro 512 Gb (Физ-сим+eSIM)",
+        "category": "iPhone",
+        "price": "От 146 490 ₽",
+        "discount_price": "От 126 990 ₽",
+        "image": "https://appface.store/uploads/products/product_97_69c4f7673b4da.png"
+    },
+    {
+        "name": "MacBook Air 13 M4 16/512Gb",
+        "category": "MacBook",
+        "price": "От 113 990 ₽",
+        "discount_price": "От 98 990 ₽",
+        "image": "https://appface.store/uploads/products/product_126_69c50e5ba8955.png"
+    },
+    {
+        "name": "Мини Про 3",
+        "category": "Аксессуары",
+        "price": "От 12 990 ₽",
+        "discount_price": "От 10 990 ₽",
+        "image": "https://appface.store/uploads/products/product_150_69c516d0407dc.png"
+    },
+    {
+        "name": "iPhone 17 Pro Max 512 Gb (eSIM)",
+        "category": "iPhone",
+        "price": "От 137 990 ₽",
+        "discount_price": "От 119 990 ₽",
+        "image": "https://appface.store/uploads/products/product_89_69c4f5c51a654.png"
+    },
+    {
+        "name": "Чехол VLP Pulse",
+        "category": "Аксессуары",
+        "price": "От 3 500 ₽",
+        "discount_price": "От 3 500 ₽",
+        "image": "https://appface.store/uploads/products/product_154_69c5192be6207.webp"
+    },
+    {
+        "name": "iPhone 14 Plus 128Gb",
+        "category": "iPhone",
+        "price": "От 55 490 ₽",
+        "discount_price": "От 47 990 ₽",
+        "image": "https://appface.store/uploads/products/product_112_69c5027dc7f9f.png"
+    },
+    {
+        "name": "Кабель Apple",
+        "category": "Аксессуары",
+        "price": "От 2 490 ₽",
+        "discount_price": "От 2 490 ₽",
+        "image": "https://appface.store/uploads/products/product_162_69c5206ecb4f4.png"
+    },
+    {
+        "name": "Apple EarPods USB-C",
+        "category": "Аксессуары",
+        "price": "От 3 490 ₽",
+        "discount_price": "От 3 490 ₽",
+        "image": "https://appface.store/uploads/products/product_157_69c51a024d12b.png"
+    },
+    {
+        "name": "iPhone 17 Pro 256 Gb (eSIM)",
+        "category": "iPhone",
+        "price": "От 113 990 ₽",
+        "discount_price": "От 98 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_70_69c1012508438.png"
+    },
+    {
+        "name": "iPhone 17 Pro 256 Gb (Физ-сим+eSIM)",
+        "category": "iPhone",
+        "price": "От 121 990 ₽",
+        "discount_price": "От 105 990 ₽",
+        "image": "https://appface.store/uploads/products/product_95_69c4f7173b507.png"
+    },
+    {
+        "name": "MacBook Pro 14 M5 16/512Gb",
+        "category": "MacBook",
+        "price": "От 157 990 ₽",
+        "discount_price": "От 136 990 ₽",
+        "image": "https://appface.store/uploads/products/product_145_69c513a68c518.png"
+    },
+    {
+        "name": "Яндекс Станция 3",
+        "category": "Аксессуары",
+        "price": "От 26 490 ₽",
+        "discount_price": "От 22 990 ₽",
+        "image": "https://appface.store/uploads/products/product_153_69c5184233abf.webp"
+    },
+    {
+        "name": "Зарядка MagSafe Charger",
+        "category": "Аксессуары",
+        "price": "От 6 490 ₽",
+        "discount_price": "От 6 490 ₽",
+        "image": "https://appface.store/uploads/products/product_163_69c520c4b3319.png"
+    },
+    {
+        "name": "iPad Pro 13\" M5 256Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 121 990 ₽",
+        "discount_price": "От 105 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_53_69c0ee8abf644.png"
+    },
+    {
+        "name": "iPhone Air 512 Gb eSim",
+        "category": "iPhone",
+        "price": "От 111 990 ₽",
+        "discount_price": "От 96 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_62_69c0fd159fd30.png"
+    },
+    {
+        "name": "Чехол VLP Aster Pro",
+        "category": "Аксессуары",
+        "price": "От 3 500 ₽",
+        "discount_price": "От 3 500 ₽",
+        "image": "https://appface.store/uploads/products/product_160_69c51e137c6d2.webp"
+    },
+    {
+        "name": "Apple AirPods 4",
+        "category": "AirPods",
+        "price": "От 12 990 ₽",
+        "discount_price": "От 10 990 ₽",
+        "image": "https://appface.store/uploads/products/product_116_69c50507a23e0.png"
+    },
+    {
+        "name": "Сетевое зарядное устройство VLP",
+        "category": "Аксессуары",
+        "price": "От 3 990 ₽",
+        "discount_price": "От 3 990 ₽",
+        "image": "https://appface.store/uploads/products/product_170_69c5236f299bc.png"
+    },
+    {
+        "name": "MacBook Pro 14\" M5 16/512Gb",
+        "category": "MacBook",
+        "price": "От 157 990 ₽",
+        "discount_price": "От 136 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_27_69befa44b1d49.png"
+    },
+    {
+        "name": "Adapter Hoco 20W",
+        "category": "Аксессуары",
+        "price": "От 1 500 ₽",
+        "discount_price": "От 1 500 ₽",
+        "image": "https://appface.store/uploads/products/product_166_69c521a0f05c0.png"
+    },
+    {
+        "name": "AirPods Pro 3",
+        "category": "AirPods",
+        "price": "От 25 490 ₽",
+        "discount_price": "От 21 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_19_69c00646006d8.webp"
+    },
+    {
+        "name": "Marshall Major 4",
+        "category": "Marshall",
+        "price": "От 8 990 ₽",
+        "discount_price": "От 8 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_18_690632b704bf1.png"
+    },
+    {
+        "name": "Earphone Remax USB-C",
+        "category": "Аксессуары",
+        "price": "От 600 ₽",
+        "discount_price": "От 600 ₽",
+        "image": "https://appface.store/uploads/products/product_155_69c519278d7bf.png"
+    },
+    {
+        "name": "iPhone 17 Pro Max 256 Gb (eSIM)",
+        "category": "iPhone",
+        "price": "От 123 490 ₽",
+        "discount_price": "От 106 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_74_69c109d7ad5d6.png"
+    },
+    {
+        "name": "Apple EarPods USB-C",
+        "category": "Аксессуары",
+        "price": "От 3 490 ₽",
+        "discount_price": "От 3 490 ₽",
+        "image": "https://appface.store/uploads/products/product_157_69c51a024d12b.png"
+    },
+    {
+        "name": "Apple Watch SE 3 40mm",
+        "category": "AppleWatch",
+        "price": "От 26 490 ₽",
+        "discount_price": "От 22 990 ₽",
+        "image": "https://appface.store/uploads/products/product_138_69c53296dd704.png"
+    },
+    {
+        "name": "MacBook Pro 14 M4 Pro 24Gb/1Tb",
+        "category": "MacBook",
+        "price": "От 272 990 ₽",
+        "discount_price": "От 236 990 ₽",
+        "image": "https://appface.store/uploads/products/product_136_69c51116d7508.png"
+    },
+    {
+        "name": "Умная розетка",
+        "category": "Аксессуары",
+        "price": "От 1 690 ₽",
+        "discount_price": "От 1 690 ₽",
+        "image": "https://appface.store/uploads/products/product_159_69c51d90399d2.png"
+    },
+    {
+        "name": "iPhone 14 128Gb",
+        "category": "iPhone",
+        "price": "От 50 990 ₽",
+        "discount_price": "От 43 990 ₽",
+        "image": "https://appface.store/uploads/products/product_109_69c5016b9df10.png"
+    },
+    {
+        "name": "iMac 24 M4 Retina 4K (10c CPU/10c GPU16/512Gb)",
+        "category": "iMac",
+        "price": "От 220 990 ₽",
+        "discount_price": "От 191 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_52_69c0ed80ef25d.png"
+    },
+    {
+        "name": "iPad mini 7 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 47 490 ₽",
+        "discount_price": "От 40 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_71_69c1020099d23.png"
+    },
+    {
+        "name": "iPhone Air 1 Tb eSIM",
+        "category": "iPhone",
+        "price": "От 117 490 ₽",
+        "discount_price": "От 101 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_64_69c0fde0317cf.png"
+    },
+    {
+        "name": "iPhone 17 Pro 256 Gb (eSIM)",
+        "category": "iPhone",
+        "price": "От 113 990 ₽",
+        "discount_price": "От 98 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_70_69c1012508438.png"
+    },
+    {
+        "name": "It Takes Two",
+        "category": "Аксессуары",
+        "price": "От 3 990 ₽",
+        "discount_price": "От 3 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_44_69c01291988f9.png"
+    },
+    {
+        "name": "iPad Pro 11 M5 512Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 125 490 ₽",
+        "discount_price": "От 108 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_57_69c0f15e02a44.png"
+    },
+    {
+        "name": "iPhone 17e 256 gb",
+        "category": "iPhone",
+        "price": "От 64 490 ₽",
+        "discount_price": "От 55 990 ₽",
+        "image": "https://appface.store/uploads/products/product_183_69d4d81c3b70a.jpeg"
+    },
+    {
+        "name": "MacBook Pro 14\" M5 16/512Gb",
+        "category": "MacBook",
+        "price": "От 157 990 ₽",
+        "discount_price": "От 136 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_27_69befa44b1d49.png"
+    },
+    {
+        "name": "Защитное стекло Remax",
+        "category": "Аксессуары",
+        "price": "От 1 200 ₽",
+        "discount_price": "От 1 200 ₽",
+        "image": "https://appface.store/uploads/products/product_173_69c525015d66f.jpg"
+    },
+    {
+        "name": "iPhone 17 Pro Max 256 Gb (Физ-сим+eSIM)",
+        "category": "iPhone",
+        "price": "От 131 490 ₽",
+        "discount_price": "От 113 990 ₽",
+        "image": "https://appface.store/uploads/products/product_88_69c4f5a03da7a.png"
+    },
+    {
+        "name": "Кабель Apple",
+        "category": "Аксессуары",
+        "price": "От 2 490 ₽",
+        "discount_price": "От 2 490 ₽",
+        "image": "https://appface.store/uploads/products/product_162_69c5206ecb4f4.png"
+    },
+    {
+        "name": "MacBook Air 13 M4 16/256Gb",
+        "category": "MacBook",
+        "price": "От 101 490 ₽",
+        "discount_price": "От 87 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_28_69befe71a4b24.png"
+    },
+    {
+        "name": "Яндекс Станция Лайт 2",
+        "category": "Аксессуары",
+        "price": "От 5 990 ₽",
+        "discount_price": "От 4 990 ₽",
+        "image": "https://appface.store/uploads/products/product_148_69c5161055fab.png"
+    },
+    {
+        "name": "iPad mini 7 256Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 60 990 ₽",
+        "discount_price": "От 52 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_72_69c102a9e427a.png"
+    },
+    {
+        "name": "PlayStation 5 Slim 1Tb (Диск)",
+        "category": "PlayStation",
+        "price": "От 60 990 ₽",
+        "discount_price": "От 52 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_39_69c0107768547.png"
+    },
+    {
+        "name": "iPhone 16 Plus 256Gb",
+        "category": "iPhone",
+        "price": "От 82 990 ₽",
+        "discount_price": "От 71 990 ₽",
+        "image": "https://appface.store/uploads/products/product_87_69c413ddae100.webp"
+    },
+    {
+        "name": "MacBook Pro 14 M4 Pro 24Gb/1Tb",
+        "category": "MacBook",
+        "price": "От 272 990 ₽",
+        "discount_price": "От 236 990 ₽",
+        "image": "https://appface.store/uploads/products/product_136_69c51116d7508.png"
+    },
+    {
+        "name": "Dyson Airwrap Styler Complete HS09",
+        "category": "Dyson",
+        "price": "От 66 990 ₽",
+        "discount_price": "От 57 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_33_69c0075906aca.png"
+    },
+    {
+        "name": "iPad 11\" 2025 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 35 990 ₽",
+        "discount_price": "От 30 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_68_69c1005c640a3.png"
+    },
+    {
+        "name": "iPhone 15 Plus 256Gb",
+        "category": "iPhone",
+        "price": "От 68 990 ₽",
+        "discount_price": "От 59 990 ₽",
+        "image": "https://appface.store/uploads/products/product_107_69c5007e26b43.webp"
+    },
+    {
+        "name": "iPhone 14 256Gb",
+        "category": "iPhone",
+        "price": "От 65 990 ₽",
+        "discount_price": "От 56 990 ₽",
+        "image": "https://appface.store/uploads/products/product_110_69c501efdd8e4.png"
+    },
+    {
+        "name": "MacBook Air 13 M4 16/256Gb",
+        "category": "MacBook",
+        "price": "От 101 490 ₽",
+        "discount_price": "От 87 990 ₽",
+        "image": "https://appface.store/uploads/products/product_125_69c50e0e2103b.png"
+    },
+    {
+        "name": "iPhone 17 Pro Max 512 Gb (Физ-сим+eSIM)",
+        "category": "iPhone",
+        "price": "От 156 490 ₽",
+        "discount_price": "От 135 990 ₽",
+        "image": "https://appface.store/uploads/products/product_90_69c4f5ee3a531.png"
+    },
+    {
+        "name": "iPad 11\" 2025 256Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 45 990 ₽",
+        "discount_price": "От 39 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_69_69c100d5cd724.png"
+    },
+    {
+        "name": "MacBook Air 15 M4 16/256Gb",
+        "category": "MacBook",
+        "price": "От 117 490 ₽",
+        "discount_price": "От 101 990 ₽",
+        "image": "https://appface.store/uploads/products/product_128_69c50eb90562e.png"
+    },
+    {
+        "name": "iPhone 17e 256 gb",
+        "category": "iPhone",
+        "price": "От 64 490 ₽",
+        "discount_price": "От 55 990 ₽",
+        "image": "https://appface.store/uploads/products/product_183_69d4d81c3b70a.jpeg"
+    },
+    {
+        "name": "iPhone 12 128Gb",
+        "category": "iPhone",
+        "price": "От 40 490 ₽",
+        "discount_price": "От 34 990 ₽",
+        "image": "https://appface.store/uploads/products/product_118_69c5071698faa.webp"
+    },
+    {
+        "name": "iPad Air 11 M3 256Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 66 990 ₽",
+        "discount_price": "От 57 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_66_69c0fe43baf28.png"
+    },
+    {
+        "name": "It Takes Two",
+        "category": "Аксессуары",
+        "price": "От 3 990 ₽",
+        "discount_price": "От 3 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_44_69c01291988f9.png"
+    },
+    {
+        "name": "Яндекс Станция Миди (с часами)",
+        "category": "Аксессуары",
+        "price": "От 16 490 ₽",
+        "discount_price": "От 13 990 ₽",
+        "image": "https://appface.store/uploads/products/product_152_69c517f45255f.png"
+    },
+    {
+        "name": "Dyson AirStrait HT01",
+        "category": "Dyson",
+        "price": "От 42 990 ₽",
+        "discount_price": "От 36 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_34_69c008ebcf6ec.png"
+    },
+    {
+        "name": "Умная розетка",
+        "category": "Аксессуары",
+        "price": "От 1 690 ₽",
+        "discount_price": "От 1 690 ₽",
+        "image": "https://appface.store/uploads/products/product_159_69c51d90399d2.png"
+    },
+    {
+        "name": "Картхолдер iHome",
+        "category": "Аксессуары",
+        "price": "От 500 ₽",
+        "discount_price": "От 500 ₽",
+        "image": "https://appface.store/uploads/products/product_171_69c523929211a.webp"
+    },
+    {
+        "name": "AirPods Max",
+        "category": "AirPods",
+        "price": "От 49 490 ₽",
+        "discount_price": "От 42 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_31_69c0028521d3d.webp"
+    },
+    {
+        "name": "iPhone 15 Plus 512Gb",
+        "category": "iPhone",
+        "price": "От 72 490 ₽",
+        "discount_price": "От 62 990 ₽",
+        "image": "https://appface.store/uploads/products/product_108_69c500a334ce6.webp"
+    },
+    {
+        "name": "Apple Watch SE 3 44mm",
+        "category": "AppleWatch",
+        "price": "От 28 990 ₽",
+        "discount_price": "От 24 990 ₽",
+        "image": "https://appface.store/uploads/products/product_140_69c511954b6c1.webp"
+    },
+    {
+        "name": "iPad Air 11 M3 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 56 490 ₽",
+        "discount_price": "От 48 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_63_69c0fda7e051f.png"
+    },
+    {
+        "name": "iPhone 16 128Gb",
+        "category": "iPhone",
+        "price": "От 65 990 ₽",
+        "discount_price": "От 56 990 ₽",
+        "image": "https://appface.store/uploads/products/product_84_69c40d7611ea6.webp"
+    },
+    {
+        "name": "iPhone 15 Plus 128Gb",
+        "category": "iPhone",
+        "price": "От 64 490 ₽",
+        "discount_price": "От 55 990 ₽",
+        "image": "https://appface.store/uploads/products/product_106_69c50043c4274.webp"
+    },
+    {
+        "name": "iPhone 16e 128Gb",
+        "category": "iPhone",
+        "price": "От 56 490 ₽",
+        "discount_price": "От 48 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_75_69c1173e3c61a.png"
+    },
+    {
+        "name": "iPhone 14 Plus 512Gb",
+        "category": "iPhone",
+        "price": "От 66 490 ₽",
+        "discount_price": "От 57 490 ₽",
+        "image": "https://appface.store/uploads/products/product_113_69c5029a3e870.png"
+    },
+    {
+        "name": "iPad Pro 13\" M5 512Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 155 490 ₽",
+        "discount_price": "От 134 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_54_69c0ef4fb235a.png"
+    },
+    {
+        "name": "Apple iPad Air 11 M3 512Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 98 990 ₽",
+        "discount_price": "От 85 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_67_69c0fec7f01fd.png"
+    },
+    {
+        "name": "MacBook Pro 14\" M5 16/512Gb",
+        "category": "MacBook",
+        "price": "От 157 990 ₽",
+        "discount_price": "От 136 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_27_69befa44b1d49.png"
+    },
+    {
+        "name": "AirPods Pro 3",
+        "category": "AirPods",
+        "price": "От 25 490 ₽",
+        "discount_price": "От 21 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_19_69c00646006d8.webp"
+    },
+    {
+        "name": "MacBook Air 13 M4 16/256Gb",
+        "category": "MacBook",
+        "price": "От 101 490 ₽",
+        "discount_price": "От 87 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_28_69befe71a4b24.png"
+    },
+    {
+        "name": "iPhone 16 Plus 256Gb",
+        "category": "iPhone",
+        "price": "От 82 990 ₽",
+        "discount_price": "От 71 990 ₽",
+        "image": "https://appface.store/uploads/products/product_87_69c413ddae100.webp"
+    },
+    {
+        "name": "Беспроводная станция VLP ALUM Power Pro",
+        "category": "Аксессуары",
+        "price": "От 11 500 ₽",
+        "discount_price": "От 11 500 ₽",
+        "image": "https://appface.store/uploads/products/product_174_69c5250dab387.png"
+    },
+    {
+        "name": "MacBook Air 15 M4 24/512Gb",
+        "category": "MacBook",
+        "price": "От 150 990 ₽",
+        "discount_price": "От 130 990 ₽",
+        "image": "https://appface.store/uploads/products/product_130_69c50ef86bedf.png"
+    },
+    {
+        "name": "Dyson AirStrait HT01",
+        "category": "Dyson",
+        "price": "От 42 990 ₽",
+        "discount_price": "От 36 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_34_69c008ebcf6ec.png"
+    },
+    {
+        "name": "Пылесос Dyson V12",
+        "category": "Dyson",
+        "price": "От 45 990 ₽",
+        "discount_price": "От 39 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_36_69c00aeb67aa2.png"
+    },
+    {
+        "name": "Adapter Hoco 20W",
+        "category": "Аксессуары",
+        "price": "От 1 500 ₽",
+        "discount_price": "От 1 500 ₽",
+        "image": "https://appface.store/uploads/products/product_166_69c521a0f05c0.png"
+    },
+    {
+        "name": "Защитное стекло от VLP на камеру",
+        "category": "Аксессуары",
+        "price": "От 1 500 ₽",
+        "discount_price": "От 1 500 ₽",
+        "image": "https://appface.store/uploads/products/product_177_69c529ba1b107.webp"
+    },
+    {
+        "name": "EA Sports FC 25 (Рус.)",
+        "category": "Аксессуары",
+        "price": "От 5 990 ₽",
+        "discount_price": "От 5 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_46_69c01325903fc.webp"
+    },
+    {
+        "name": "Apple Pencil 2",
+        "category": "Аксессуары",
+        "price": "От 14 490 ₽",
+        "discount_price": "От 12 490 ₽",
+        "image": "https://appface.store/uploads/products/product_181_69c52b745e8ab.png"
+    },
+    {
+        "name": "MacBook Neo 8/512Gb",
+        "category": "MacBook",
+        "price": "От 74 990 ₽",
+        "discount_price": "От 64 990 ₽",
+        "image": "https://appface.store/uploads/products/product_122_69c50c5840a56.png"
+    },
+    {
+        "name": "iPhone Air 512 Gb eSim",
+        "category": "iPhone",
+        "price": "От 111 990 ₽",
+        "discount_price": "От 96 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_62_69c0fd159fd30.png"
+    },
+    {
+        "name": "iPad 11\" 2025 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 35 990 ₽",
+        "discount_price": "От 30 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_68_69c1005c640a3.png"
+    },
+    {
+        "name": "Apple Battery Pack",
+        "category": "Аксессуары",
+        "price": "От 11 490 ₽",
+        "discount_price": "От 9 990 ₽",
+        "image": "https://appface.store/uploads/products/product_165_69c521516fdb8.png"
+    },
+    {
+        "name": "iPad 11\" 2025 256Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 45 990 ₽",
+        "discount_price": "От 39 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_69_69c100d5cd724.png"
+    },
+    {
+        "name": "MacBook Pro 14 M5 16Gb/1Tb",
+        "category": "MacBook",
+        "price": "От 188 990 ₽",
+        "discount_price": "От 163 990 ₽",
+        "image": "https://appface.store/uploads/products/product_146_69c513da9eb9d.png"
+    },
+    {
+        "name": "iPhone 17 256 GB",
+        "category": "iPhone",
+        "price": "От 74 990 ₽",
+        "discount_price": "От 64 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_55_69c0f04b7e5a4.png"
+    },
+    {
+        "name": "Геймпад PS5",
+        "category": "PlayStation",
+        "price": "От 9 490 ₽",
+        "discount_price": "От 7 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_40_69c010fa4a961.png"
+    },
+    {
+        "name": "MacBook Air 15 M4 16/256Gb",
+        "category": "MacBook",
+        "price": "От 117 490 ₽",
+        "discount_price": "От 101 990 ₽",
+        "image": "https://appface.store/uploads/products/product_128_69c50eb90562e.png"
+    },
+    {
+        "name": "Яндекс Станция Лайт 2",
+        "category": "Аксессуары",
+        "price": "От 5 990 ₽",
+        "discount_price": "От 4 990 ₽",
+        "image": "https://appface.store/uploads/products/product_148_69c5161055fab.png"
+    },
+    {
+        "name": "Сетевое зарядное устройство VLP",
+        "category": "Аксессуары",
+        "price": "От 3 990 ₽",
+        "discount_price": "От 3 990 ₽",
+        "image": "https://appface.store/uploads/products/product_170_69c5236f299bc.png"
+    },
+    {
+        "name": "MacBook Pro 14 M5 24Gb/1Tb",
+        "category": "MacBook",
+        "price": "От 205 990 ₽",
+        "discount_price": "От 178 990 ₽",
+        "image": "https://appface.store/uploads/products/product_147_69c513f358881.png"
+    },
+    {
+        "name": "iPad mini 7 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 47 490 ₽",
+        "discount_price": "От 40 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_71_69c1020099d23.png"
+    },
+    {
+        "name": "Earphone Remax USB-C",
+        "category": "Аксессуары",
+        "price": "От 600 ₽",
+        "discount_price": "От 600 ₽",
+        "image": "https://appface.store/uploads/products/product_155_69c519278d7bf.png"
+    },
+    {
+        "name": "MacBook Neo 8/256Gb",
+        "category": "MacBook",
+        "price": "От 80 490 ₽",
+        "discount_price": "От 69 990 ₽",
+        "image": "https://appface.store/uploads/products/product_123_69c50c7c1d01d.png"
+    },
+    {
+        "name": "MacBook Pro 14 M4 Pro 24/512Gb",
+        "category": "MacBook",
+        "price": "От 237 490 ₽",
+        "discount_price": "От 206 490 ₽",
+        "image": "https://appface.store/uploads/products/product_133_69c510ab96e45.png"
+    },
+    {
+        "name": "iPad Pro 13\" M5 512Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 155 490 ₽",
+        "discount_price": "От 134 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_54_69c0ef4fb235a.png"
+    },
+    {
+        "name": "iPad mini 7 128Gb Wi-Fi",
+        "category": "iPad",
+        "price": "От 47 490 ₽",
+        "discount_price": "От 40 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_71_69c1020099d23.png"
+    },
+    {
+        "name": "Яндекс Станция 3",
+        "category": "Аксессуары",
+        "price": "От 26 490 ₽",
+        "discount_price": "От 22 990 ₽",
+        "image": "https://appface.store/uploads/products/product_153_69c5184233abf.webp"
+    },
+    {
+        "name": "iPhone 15 Plus 512Gb",
+        "category": "iPhone",
+        "price": "От 72 490 ₽",
+        "discount_price": "От 62 990 ₽",
+        "image": "https://appface.store/uploads/products/product_108_69c500a334ce6.webp"
+    },
+    {
+        "name": "Split Fiction",
+        "category": "Аксессуары",
+        "price": "От 4 990 ₽",
+        "discount_price": "От 4 990 ₽",
+        "image": "https://appface.store/appface/uploads/products/product_45_69c012e59b53a.png"
+    },
+    {
+        "name": "iPhone 16 Plus 512Gb",
+        "category": "iPhone",
+        "price": "От 106 990 ₽",
+        "discount_price": "От 92 990 ₽",
+        "image": "https://appface.store/uploads/products/product_100_69c4f84111464.webp"
+    }
+]
