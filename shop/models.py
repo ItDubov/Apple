@@ -109,15 +109,27 @@ class OrderItem(models.Model):
 
 
 # 📝 БЛОГ
+from django.db import models
+from django.utils.text import slugify
+import uuid
+
+
 class Blog(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)  # ✅ разрешаем пустой
 
     content = models.TextField()
     image = models.ImageField(upload_to='blog/', blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            # 🔥 делаем уникальный slug
+            base_slug = slugify(self.title)
+            self.slug = f"{base_slug}-{uuid.uuid4().hex[:6]}"
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
