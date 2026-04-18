@@ -1,4 +1,5 @@
 from django.urls import path
+from . import views
 from .views import (index,
                     product_detail,
                     update_price,
@@ -23,4 +24,5 @@ urlpatterns = [
     path('blog/', blog_list, name='blog_list'),
     path('blog/<slug:slug>/', blog_detail, name='blog_detail'),
     path('filter-products/', filter_products, name='filter_products'),
+    path('category/<int:id>/', views.category_view, name='category_view'),
 ]

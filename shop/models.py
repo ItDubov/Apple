@@ -131,3 +131,4 @@ class ProductImage(models.Model):
         return f'Image for {self.product.name}'
 
 name = models.CharField(_("Название"), max_length=255)
+

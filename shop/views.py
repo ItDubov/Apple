@@ -5,6 +5,7 @@ from .forms import OrderForm, ContactForm
 from .utils import send_order_email
 from django.core.mail import send_mail
 from django.core.cache import cache
+from django.shortcuts import render, get_object_or_404
 
 
 # 🏠 ГЛАВНАЯ (с кэшем)
@@ -14,7 +15,7 @@ def index(request):
     blogs = cache.get('blogs')
 
     if not products:
-        products = Product.objects.filter(available=True)[:8]
+        products = Product.objects.filter(available=True)
         cache.set('products', products, 60 * 10)
 
     if not categories:
@@ -149,5 +150,16 @@ def filter_products(request):
         products = products.filter(category_id=category_id)
 
     return render(request, 'partials/product_list.html', {
+        'products': products
+    })
+
+
+def category_view(request, id):
+    category = get_object_or_404(Category, id=id)
+
+    products = Product.objects.filter(category=category, available=True)
+
+    return render(request, 'category.html', {
+        'category': category,
         'products': products
     })

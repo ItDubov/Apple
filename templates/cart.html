@@ -1,21 +1,137 @@
 {% extends 'base.html' %}
 {% load i18n %}
+
 {% block content %}
 
-<h1>🛒 {% trans "Корзина" %}</h1>
+<style>
+/* 📦 контейнер */
+.cart-wrapper {
+    max-width: 900px;
+    margin: 30px auto;
+}
 
-{% for item in cart %}
-    <div>
-        <h3>{{ item.product.name }}</h3>
-        <p>{% trans "Количество" %}: {{ item.quantity }}</p>
-        <p>{% trans "Цена" %}: {{ item.total_price }} €</p>
+/* 🧱 карточка товара */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        <a href="{% url 'cart_remove' item.product.id %}">{% trans "Удалить" %}</a>
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+
+    padding: 16px;
+    margin-bottom: 12px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+/* 📄 название */
+.cart-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* 📊 информация */
+.cart-info {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 💰 цена */
+.cart-price {
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+/* 🗑 кнопка удалить */
+.cart-remove {
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.cart-remove:hover {
+    background: #d9363e;
+}
+
+/* 📦 итог */
+.cart-total {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* 🟦 checkout кнопка */
+.checkout-btn {
+    display: inline-block;
+    margin-top: 15px;
+
+    background: Black;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.checkout-btn:hover {
+    background: #0b5ed7;
+}
+</style>
+
+<div class="cart-wrapper">
+
+    <h2 style="margin-bottom: 20px;">
+        🛒 {% trans "Корзина" %}
+    </h2>
+
+    {% for item in cart %}
+
+        <div class="cart-item">
+
+            <div>
+                <div class="cart-title">
+                    {{ item.product.name }}
+                </div>
+
+                <div class="cart-info">
+                    {% trans "Количество" %}: {{ item.quantity }}
+                </div>
+
+                <div class="cart-price">
+                    {{ item.total_price }} ₽
+                </div>
+            </div>
+
+            <a href="{% url 'cart_remove' item.product.id %}" class="cart-remove">
+                {% trans "Удалить" %}
+            </a>
+
+        </div>
+
+    {% empty %}
+        <p>Корзина пуста</p>
+    {% endfor %}
+
+    <div class="cart-total">
+        {% trans "Итого" %}: {{ cart.get_total_price }} ₽
     </div>
-{% endfor %}
 
-<h2>{% trans "Итого" %}: {{ cart.get_total_price }} €</h2>
+    <a href="{% url 'checkout' %}" class="checkout-btn">
+        {% trans "Оформить заказ" %}
+    </a>
 
-<a href="{% url 'checkout' %}">{% trans "Оформить заказ" %}</a>
+</div>
 
 {% endblock %}

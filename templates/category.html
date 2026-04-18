@@ -1,4 +1,9 @@
+{% extends 'base.html' %}
 {% load i18n %}
+
+{% block content %}
+
+<h2 class="mb-3">{{ category.name }}</h2>
 
 <style>
 /* 📦 сетка */
@@ -12,25 +17,24 @@
 
 /* 🧱 карточка */
 .product-card {
-    border: 2px solid #cfcfcf;   /* чуть жирнее */
+    border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     background: #fff;
     display: flex;
     flex-direction: column;
-    transition: 0.25s ease;
+    transition: 0.2s;
 
-    /* ❗ ВАЖНО: УБРАЛ max-width */
-    width: 100%;
-
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    max-width: 240px;   /* 🔥 уменьшение */
+    margin: 0 auto;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* hover */
 .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border-color: #b5b5b5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* 📸 изображение */
@@ -38,7 +42,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-bottom: 1.5px solid #d9d9d9;
+    border-bottom: 1px solid #eee;
 }
 
 /* 📄 контент */
@@ -53,7 +57,7 @@
 .product-title {
     font-size: 14px;
     font-weight: 600;
-    color: Black;
+    line-height: 1.2;
 }
 
 /* 💰 цены */
@@ -65,11 +69,23 @@
 
 .price-new {
     font-weight: bold;
-    color: #000;
+    color: Black;
     font-size: 14px;
 }
-</style>
 
+/* 📱 адаптив */
+@media (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 
 <div class="products-grid">
 
@@ -105,3 +121,5 @@
 {% endfor %}
 
 </div>
+
+{% endblock %}

@@ -1,10 +1,124 @@
+{% extends 'base.html' %}
 {% load i18n %}
-<h1>{% trans "Спасибо за заказ" %}!</h1>
-<p>{% trans "Номер заказа" %}: {{ order.id }}</p>
-<nav>
-        <a href="/">{% trans "Главная" %}</a>
 
-        {% for category in categories %}
-            <a href="#">{{ category.name }}</a>
-        {% endfor %}
-    </nav>
+{% block content %}
+
+<style>
+.success-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+/* карточка */
+.success-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* иконка */
+.success-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+/* заголовок */
+.success-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* текст */
+.success-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* номер заказа */
+.order-id {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* кнопки */
+.success-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+/* главная */
+.btn-main {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.btn-main:hover {
+    background: #0b5ed7;
+}
+
+/* категории */
+.btn-category {
+    background: #f1f1f1;
+    color: #333;
+}
+
+.btn-category:hover {
+    background: #e0e0e0;
+}
+</style>
+
+<div class="success-wrapper">
+
+    <div class="success-card">
+
+        <div class="success-icon">🎉</div>
+
+        <div class="success-title">
+            {% trans "Спасибо за заказ!" %}
+        </div>
+
+        <div class="success-text">
+            {% trans "Ваш заказ успешно оформлен." %}
+        </div>
+
+        <div class="order-id">
+            {% trans "Номер заказа" %}: #{{ order.id }}
+        </div>
+
+        <!-- кнопки -->
+        <div>
+
+            <a href="/" class="success-btn btn-main">
+                {% trans "На главную" %}
+            </a>
+
+            <br>
+
+            {% for category in categories %}
+                <a href="{% url 'category_view' category.id %}" class="success-btn btn-category">
+                    {{ category.name }}
+                </a>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

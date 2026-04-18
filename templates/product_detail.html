@@ -59,7 +59,11 @@
             </div>
 
             <!-- BUTTON -->
-            <button class="btn btn-dark btn-lg w-100 mb-4">
+            <button
+                    class="btn btn-dark btn-lg w-100 mb-4"
+                    hx-get="{% url 'cart_add' product.id %}"
+                    hx-target="#cart-count"
+                    hx-swap="innerHTML">
                 🛒 {% trans "Добавить в корзину" %}
             </button>
 
