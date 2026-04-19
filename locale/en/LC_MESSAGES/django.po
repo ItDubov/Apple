@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-14 23:36+0300\n"
+"POT-Creation-Date: 2026-04-19 00:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,86 +18,163 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\config\settings.py:121
+#: config/settings.py:100
 msgid "Russian"
 msgstr "Russian"
 
-#: .\config\settings.py:122
+#: config/settings.py:101
 msgid "English"
 msgstr "English"
 
-#: .\config\settings.py:123
+#: config/settings.py:102
 msgid "Lithuanian"
 msgstr "Lithuanian"
 
-#: .\shop\models.py:93
-msgid "Название"
-msgstr "Title"
+#: shop/forms.py:14 shop/forms.py:26
+msgid "Имя"
+msgstr "Name"
 
-#: .\templates\base.html:30 .\templates\contact_success.html:4
-#: .\templates\success.html:5
-msgid "Главная"
-msgstr "Home"
+#: shop/forms.py:15
+msgid "Фамилия"
+msgstr "Surname"
 
-msgid "Блог"
-msgstr "Blog"
+#: shop/forms.py:16 shop/forms.py:30
+msgid "Почта"
+msgstr "Email"
 
-msgid "Контакты"
-msgstr "Contacts"
+#: shop/forms.py:17
+msgid "Телефон"
+msgstr "Phone"
 
-msgid "Корзина"
-msgstr "Cart"
+#: shop/forms.py:18
+msgid "Адрес"
+msgstr "Address"
 
-msgid "Количество"
-msgstr "Quantity"
+#: shop/forms.py:35
+msgid "Сообщение"
+msgstr "Message"
 
-msgid "Цена"
-msgstr "Price"
+#: shop/models.py:13
+msgid "Категория"
+msgstr "Category"
 
-msgid "Удалить"
-msgstr "Remove"
-
-msgid "Итого"
-msgstr "Total"
-
-msgid "Оформить заказ"
-msgstr "Checkout"
-
-msgid "Оформление заказа"
-msgstr "Order checkout"
-
-msgid "Оплатить"
-msgstr "Pay"
-
-msgid "Отправить"
-msgstr "Send"
-
-msgid "Сообщение отправлено!"
-msgstr "Message sent!"
-
-msgid "Новинки"
-msgstr "New arrivals"
-
+#: shop/models.py:14
 msgid "Категории"
 msgstr "Categories"
 
-msgid "Смотреть все статьи"
-msgstr "View all posts"
+#: shop/models.py:63
+msgid "Товар"
+msgstr "Product"
 
+#: shop/models.py:64
+msgid "Товары"
+msgstr "Products"
+
+#: shop/models.py:145
+msgid "Название"
+msgstr "Title"
+
+#: templates/base.html:52
+msgid "Главная"
+msgstr "Home"
+
+#: templates/base.html:55 templates/blog_list.html:6
+msgid "Блог"
+msgstr "Blog"
+
+#: templates/base.html:58 templates/contact.html:69
+msgid "Контакты"
+msgstr "Contacts"
+
+#: templates/blog_list.html:94
+msgid "Постов пока нет"
+msgstr "No posts yet"
+
+#: templates/cart.html:96
+msgid "Корзина"
+msgstr "Cart"
+
+#: templates/cart.html:109
+msgid "Количество"
+msgstr "Quantity"
+
+#: templates/cart.html:118
+msgid "Удалить"
+msgstr "Remove"
+
+#: templates/cart.html:128
+msgid "Итого"
+msgstr "Total"
+
+#: templates/cart.html:132
+msgid "Оформить заказ"
+msgstr "Checkout"
+
+#: templates/category.html:120 templates/partials/product_list.html:104
+msgid "Нет товаров"
+msgstr "No products"
+
+#: templates/checkout.html:74
+msgid "Оформление заказа"
+msgstr "Checkout"
+
+#: templates/checkout.html:83
+msgid "Оплатить"
+msgstr "Pay"
+
+#: templates/contact.html:78
+msgid "Отправить"
+msgstr "Send"
+
+#: templates/contact_success.html:83
+msgid "Сообщение отправлено!"
+msgstr "Message sent!"
+
+#: templates/contact_success.html:87
+msgid "Мы свяжемся с вами в ближайшее время."
+msgstr "We will contact you soon."
+
+#: templates/contact_success.html:94 templates/success.html:107
+msgid "На главную"
+msgstr "Home"
+
+#: templates/index.html:8
+msgid "Новинки"
+msgstr "New arrivals"
+
+#: templates/index.html:11
+msgid "Свежие товары из каталога"
+msgstr "Fresh products from catalog"
+
+#: templates/index.html:29
+msgid "Все категории"
+msgstr "All categories"
+
+#: templates/product_detail.html:42
 msgid "Память"
 msgstr "Memory"
 
+#: templates/product_detail.html:51
 msgid "Цвет"
 msgstr "Color"
 
+#: templates/product_detail.html:67
+msgid "Добавить в корзину"
+msgstr "Add to cart"
+
+#: templates/product_detail.html:73
 msgid "Характеристики"
 msgstr "Specifications"
 
-msgid "Купить"
-msgstr "Buy"
+#: templates/success.html:92
+msgid "Спасибо за заказ!"
+msgstr "Thank you for your order!"
 
-msgid "Спасибо за заказ"
-msgstr "Thank you for your order"
+#: templates/success.html:96
+msgid "Ваш заказ успешно оформлен."
+msgstr "Your order has been successfully placed."
 
+#: templates/success.html:100
 msgid "Номер заказа"
 msgstr "Order number"
+

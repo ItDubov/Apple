@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-14 23:36+0300\n"
+"POT-Creation-Date: 2026-04-19 00:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,80 +20,216 @@ msgstr ""
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
 
+#: config/settings.py:100
 msgid "Russian"
 msgstr "Rusų"
 
+#: config/settings.py:101
 msgid "English"
 msgstr "Anglų"
 
+#: config/settings.py:102
 msgid "Lithuanian"
 msgstr "Lietuvių"
 
-msgid "Название"
-msgstr "Pavadinimas"
+#: shop/forms.py:14 shop/forms.py:26
+msgid "Имя"
+msgstr "Vardas"
 
-msgid "Главная"
-msgstr "Pagrindinis"
+#: shop/forms.py:15
+msgid "Фамилия"
+msgstr "Pavardė"
 
-msgid "Блог"
-msgstr "Tinklaraštis"
+#: shop/forms.py:16 shop/forms.py:30
+msgid "Почта"
+msgstr "El. paštas"
 
-msgid "Контакты"
-msgstr "Kontaktai"
+#: shop/forms.py:17
+msgid "Телефон"
+msgstr "Telefonas"
 
-msgid "Корзина"
-msgstr "Krepšelis"
+#: shop/forms.py:18
+msgid "Адрес"
+msgstr "Adresas"
 
-msgid "Количество"
-msgstr "Kiekis"
+#: shop/forms.py:35
+msgid "Сообщение"
+msgstr "Žinutė"
 
-msgid "Цена"
-msgstr "Kaina"
+#: shop/models.py:13
+msgid "Категория"
+msgstr "Kategorija"
 
-msgid "Удалить"
-msgstr "Ištrinti"
-
-msgid "Итого"
-msgstr "Iš viso"
-
-msgid "Оформить заказ"
-msgstr "Atsiskaityti"
-
-msgid "Оформление заказа"
-msgstr "Užsakymo pateikimas"
-
-msgid "Оплатить"
-msgstr "Apmokėti"
-
-msgid "Отправить"
-msgstr "Siųsti"
-
-msgid "Сообщение отправлено!"
-msgstr "Žinutė išsiųsta!"
-
-msgid "Новинки"
-msgstr "Naujienos"
-
+#: shop/models.py:14
 msgid "Категории"
 msgstr "Kategorijos"
 
-msgid "Смотреть все статьи"
-msgstr "Peržiūrėti visus straipsnius"
+#: shop/models.py:63
+msgid "Товар"
+msgstr "Prekė"
 
+#: shop/models.py:64
+msgid "Товары"
+msgstr "Prekės"
+
+#: shop/models.py:145
+msgid "Название"
+msgstr "Pavadinimas"
+
+#: templates/base.html:52
+msgid "Главная"
+msgstr "Pagrindinis"
+
+#: templates/base.html:55 templates/blog_list.html:6
+msgid "Блог"
+msgstr "Tinklaraštis"
+
+#: templates/base.html:58 templates/contact.html:69
+msgid "Контакты"
+msgstr "Kontaktai"
+
+#: templates/blog_list.html:94
+msgid "Постов пока нет"
+msgstr "Įrašų kol kas nėra"
+
+#: templates/cart.html:96
+msgid "Корзина"
+msgstr "Krepšelis"
+
+#: templates/cart.html:109
+msgid "Количество"
+msgstr "Kiekis"
+
+#: templates/cart.html:118
+msgid "Удалить"
+msgstr "Ištrinti"
+
+#: templates/cart.html:128
+msgid "Итого"
+msgstr "Iš viso"
+
+#: templates/cart.html:132
+msgid "Оформить заказ"
+msgstr "Atsiskaityti"
+
+#: templates/category.html:120 templates/partials/product_list.html:104
+msgid "Нет товаров"
+msgstr "Nėra prekių"
+
+#: templates/checkout.html:74
+msgid "Оформление заказа"
+msgstr "Užsakymo pateikimas"
+
+#: templates/checkout.html:83
+msgid "Оплатить"
+msgstr "Apmokėti"
+
+#: templates/contact.html:78
+msgid "Отправить"
+msgstr "Siųsti"
+
+#: templates/contact_success.html:83
+msgid "Сообщение отправлено!"
+msgstr "Žinutė išsiųsta!"
+
+#: templates/contact_success.html:87
+msgid "Мы свяжемся с вами в ближайшее время."
+msgstr "Netrukus su jumis susisieksime."
+
+#: templates/contact_success.html:94 templates/success.html:107
+msgid "На главную"
+msgstr "Pagrindinis"
+
+#: templates/index.html:8
+msgid "Новинки"
+msgstr "Naujienos"
+
+#: templates/index.html:11
+msgid "Свежие товары из каталога"
+msgstr "Naujos prekės iš katalogo"
+
+#: templates/index.html:29
+msgid "Все категории"
+msgstr "Visos kategorijos"
+
+#: templates/product_detail.html:42
 msgid "Память"
 msgstr "Atmintis"
 
+#: templates/product_detail.html:51
 msgid "Цвет"
 msgstr "Spalva"
 
+#: templates/product_detail.html:67
+msgid "Добавить в корзину"
+msgstr "Į krepšelį"
+
+#: templates/product_detail.html:73
 msgid "Характеристики"
 msgstr "Specifikacijos"
 
-msgid "Купить"
-msgstr "Pirkti"
+#: templates/success.html:92
+msgid "Спасибо за заказ!"
+msgstr "Ačiū už užsakymą!"
 
-msgid "Спасибо за заказ"
-msgstr "Ačiū už užsakymą"
+#: templates/success.html:96
+msgid "Ваш заказ успешно оформлен."
+msgstr "Jūsų užsakymas sėkmingai pateiktas."
 
+#: templates/success.html:100
 msgid "Номер заказа"
 msgstr "Užsakymo numeris"
+
+msgid "Теперь при покупке iPhone в iHome дарим фирменный картхолдер 📱"
+msgstr "Perkant iPhone iHome dovanojame firminį kortelių dėklą 📱"
+
+msgid "Стильный. Удобный."
+msgstr "Stilingas. Patogus."
+
+msgid "Просто прикрепили к телефону: карта, пропуск или права всегда под рукой."
+msgstr "Tiesiog pritvirtink prie telefono: kortelė, leidimas ar teisės visada po ranka."
+
+msgid "Важно: количество ограничено."
+msgstr "Svarbu: kiekis ribotas."
+
+msgid "И, как показывает практика, такие вещи улетают очень быстро."
+msgstr "Ir praktika rodo, kad tokie daiktai dingsta labai greitai."
+
+msgid "Успевайте забрать iPhone по приятной цене и получить бонус, который действительно будете использовать каждый день"
+msgstr "Spėkite įsigyti iPhone už gerą kainą ir gauti bonusą, kurį naudosite kasdien"
+
+msgid "Ждем вас в iHome ежедневно с 10:00 до 20:00"
+msgstr "Laukiame jūsų iHome kasdien nuo 10:00 iki 20:00"
+
+msgid "г. Обнинск, пр-кт Ленина, д.137 к3, 2-ой этаж (БЦ Циолковский)"
+msgstr "Obninskas, Lenino pr. 137 k3, 2 aukštas (BC Ciolkovskij)"
+
+msgid "Мир технологий ближе чем вы думаете!"
+msgstr "Technologijų pasaulis arčiau nei manote!"
+
+msgid "Не знаете, что подарить? Дарите выбор"
+msgstr "Nežinote, ką padovanoti? Dovanokite pasirinkimą"
+
+msgid "Подарочные сертификаты iHome — это простой способ угадать с подарком без лишних сомнений"
+msgstr "iHome dovanų kuponai – paprastas būdas neprašauti su dovana"
+
+msgid "iPhone, AirPods или Apple Watch пусть выбирают сами"
+msgstr "iPhone, AirPods ar Apple Watch – tegul pasirenka patys"
+
+msgid "Универсально"
+msgstr "Universalus"
+
+msgid "Удобно"
+msgstr "Patogu"
+
+msgid "Всегда в точку"
+msgstr "Visada tiksliai"
+
+msgid "Подарите эмоции и свободу выбора"
+msgstr "Padovanokite emocijas ir pasirinkimo laisvę"
+
+msgid "За сертификатами ждем вас в iHome!"
+msgstr "Laukiame jūsų iHome dėl dovanų kuponų!"
+
+msgid "Аксессуары"
+msgstr "Priedai"
