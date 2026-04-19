@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{{ blog.content|safe }}
+
+{% block content %}
 
 <style>
 .blog-detail {
@@ -47,7 +48,7 @@
     white-space: pre-wrap;
 }
 
-/* кнопка назад (если захочешь) */
+/* кнопка назад */
 .back-link {
     display: inline-block;
     margin-top: 20px;
