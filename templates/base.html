@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load static %}
 
+{# 🌍 Получаем текущий язык сайта (ru / en / lt) #}
 {% get_current_language as LANGUAGE_CODE %}
 
 <!DOCTYPE html>
@@ -8,24 +9,32 @@
 
 <head>
     <meta charset="UTF-8">
+
+    {# 📱 Адаптация под мобильные устройства #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ITDubov</title>
 
+    {# 🎨 Подключение Bootstrap (стили) #}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {# 🎨 Подключение своих стилей #}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <style>
+        /* 📂 Стили для ссылок категорий */
         .category-link {
             padding: 6px 10px;
             border-radius: 8px;
             transition: 0.2s;
         }
 
+        /* 🖱️ Эффект при наведении */
         .category-link:hover {
             background: #f1f1f1;
         }
 
+        /* ✅ Активная категория */
         .category-active {
             background: #0d6efd;
             color: white !important;
@@ -35,29 +44,32 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR (Шапка сайта) ================= -->
 <nav class="border-bottom bg-white px-3 py-2">
 
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
 
-        <!-- LOGO -->
+        <!-- 🏷️ ЛОГО -->
         <a href="/" class="fw-semibold text-dark text-decoration-none">
             ITDubov
         </a>
 
-        <!-- MENU -->
+        <!-- 📂 МЕНЮ -->
         <div class="d-flex flex-wrap gap-2 align-items-center">
 
+            {# 🏠 Главная страница #}
             <a class="category-link text-decoration-none text-dark"
                href="/">{% trans "Главная" %}</a>
 
+            {# 📝 Блог #}
             <a class="category-link text-decoration-none text-dark"
                href="{% url 'blog_list' %}">{% trans "Блог" %}</a>
 
+            {# 📩 Контакты #}
             <a class="category-link text-decoration-none text-dark"
                href="{% url 'contact' %}">{% trans "Контакты" %}</a>
 
-            <!-- 🔥 КАТЕГОРИИ (ПЕРЕХОД НА СТРАНИЦУ) -->
+            <!-- 🔥 КАТЕГОРИИ (динамически из БД) -->
             {% for category in categories %}
 
                 <a href="{% url 'category_view' category.id %}"
@@ -71,15 +83,23 @@
 
         </div>
 
-        <!-- RIGHT SIDE -->
+        <!-- ⚙️ ПРАВАЯ ЧАСТЬ -->
         <div class="d-flex align-items-center gap-3">
 
+            <!-- 🛒 КОРЗИНА -->
             <a href="{% url 'cart_detail' %}" class="text-decoration-none text-dark">
-                🛒 <span id="cart-count">{{ request.session.cart|length|default:0 }}</span>
+                🛒
+                {# 🔢 Количество товаров в корзине (из сессии) #}
+                <span id="cart-count">
+                    {{ request.session.cart|length|default:0 }}
+                </span>
             </a>
 
+            <!-- 🌍 ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА -->
             <form action="{% url 'set_language' %}" method="post">
                 {% csrf_token %}
+
+                {# 📌 После смены языка остаёмся на той же странице #}
                 <input type="hidden" name="next" value="{{ request.path }}">
 
                 <select name="language" class="form-select form-select-sm"
@@ -98,13 +118,19 @@
 
 </nav>
 
-<!-- ================= CONTENT ================= -->
+<!-- ================= ОСНОВНОЙ КОНТЕНТ ================= -->
 <div class="container-fluid py-3">
+
+    {# 📦 Сюда подставляются страницы (наследование шаблонов) #}
     {% block content %}
     {% endblock %}
+
 </div>
 
+<!-- ⚡ HTMX (для динамических обновлений без перезагрузки) -->
 <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+
+<!-- ⚡ Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

@@ -1,37 +1,50 @@
-version: "3.9"
-
-
+version: "3.9"  # 📦 версия docker-compose (можно убрать — уже устарела, но не критично)
 
 services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    volumes:
-      - .:/app
-    env_file:
-      - .env
-    depends_on:
-      - db
 
-  db:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+  # ================= WEB (DJANGO) =================
+  web:
+    build: .  # 🔨 собираем образ из Dockerfile в текущей папке
+
     ports:
-      - "5432:5432"
+      - "8000:8000"  # 🌐 пробрасываем порт (localhost:8000 → контейнер)
+
+    volumes:
+      - .:/app  # 📂 синхронизация файлов (чтобы изменения сразу применялись без пересборки)
+
+    env_file:
+      - .env  # 🔐 подключаем переменные окружения (DB, API и т.д.)
+
+    depends_on:
+      - db  # ⏳ сначала запускается база данных, потом Django
+
+
+  # ================= DATABASE (POSTGRES) =================
+  db:
+    image: postgres:15  # 🐘 официальный образ PostgreSQL
+
+    restart: always  # 🔄 автоматический перезапуск при падении контейнера
+
+    environment:
+      POSTGRES_DB: ${DB_NAME}        # 🗄 имя базы данных
+      POSTGRES_USER: ${DB_USER}      # 👤 пользователь
+      POSTGRES_PASSWORD: ${DB_PASSWORD}  # 🔑 пароль
+
+    ports:
+      - "5432:5432"  # 🌐 доступ к базе с хоста (например через DBeaver)
+
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      # 💾 сохраняем данные БД (чтобы не удалялись при перезапуске)
+
+    # 🩺 проверка, что база готова к работе
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
-      interval: 5s
-      timeout: 5s
-      retries: 10
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s    # ⏱ проверка каждые 5 секунд
+      timeout: 5s     # ⏳ таймаут
+      retries: 10     # 🔁 попытки
 
-      
 
+# ================= VOLUMES =================
 volumes:
-  postgres_data:
+  postgres_data:  # 💾 отдельный volume для хранения данных PostgreSQL
