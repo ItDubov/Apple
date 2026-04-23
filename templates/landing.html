@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="landing-wrapper">
+
+    <video autoplay muted loop id="bg-video">
+        <source src="{% static 'video/space.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero" id="hero">
+        <div class="logo">ItDubov</div>
+        <p class="hint">Нажмите в любом месте</p>
+    </div>
+
+</div>
+
+{% endblock %}
