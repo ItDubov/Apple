@@ -10,37 +10,155 @@
         body {
             margin: 0;
             overflow: hidden;
-            background: black;
             font-family: Arial;
+            background: black;
         }
 
+        /* 🌌 VIDEO BACKGROUND */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* 🎮 THREE */
+        #three-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* 🧊 UI */
         #ui {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            text-align: center;
             z-index: 10;
+            color: white;
+            pointer-events: none;
         }
 
+        /* 🔥 LOGO */
+        #logo {
+            font-size: 80px;
+            margin-top: 40px;
+            letter-spacing: 10px;
+            font-weight: bold;
+
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.8),
+                0 0 30px rgba(0,150,255,0.7);
+        }
+
+        /* 📦 MENU */
+        .menu {
+            position: absolute;
+            bottom: 60px;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        /* 🔘 ICONS */
+        .menu-item {
+            font-size: 40px;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.3);
+            text-shadow: 0 0 15px white;
+        }
+
+        /* 🏷 LABELS */
         .label {
             position: absolute;
             color: white;
             font-size: 14px;
             pointer-events: none;
         }
+
+        /* ⏳ LOADING */
+        #loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 999;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
 
-<div id="ui">ItDubov</div>
+<!-- 🌌 VIDEO -->
+<video id="bg-video" autoplay muted loop playsinline>
+    <source src="{% static 'video/space.mp4' %}" type="video/mp4">
+</video>
 
+<!-- 🎮 THREE -->
+<div id="three-container"></div>
+
+<!-- 🧊 UI -->
+<div id="ui">
+
+    <div id="logo">ITDUBOV</div>
+
+    <div class="menu">
+        <div class="menu-item">📱</div>
+        <div class="menu-item">💻</div>
+        <div class="menu-item">🎧</div>
+        <div class="menu-item">⌚</div>
+    </div>
+
+</div>
+
+<!-- ⏳ LOADING -->
 <div id="loading">
     LOADING...
 </div>
 
+<!-- LIBS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+<!-- 🎬 UI ANIMATIONS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    gsap.from("#logo", {
+        opacity: 0,
+        y: -50,
+        duration: 1
+    });
+
+    gsap.from(".menu-item", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1
+    });
+
+});
+</script>
+
+<!-- 🎮 THREE -->
 <script src="{% static 'js/home3d.js' %}"></script>
 
 </body>

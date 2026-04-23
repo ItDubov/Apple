@@ -1,29 +1,63 @@
+/* =========================
+   🌍 BASE
+========================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+    font-family: Arial, sans-serif;
+}
 
-/* ОБЩИЙ ЭКРАН */
+/* =========================
+   🌌 WRAPPER
+========================= */
 .landing-wrapper {
     position: fixed;
     inset: 0;
     overflow: hidden;
 }
 
-#loading {
+/* =========================
+   🎥 VIDEO BACKGROUND
+========================= */
+#bg-video {
     position: fixed;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    z-index: 9999;
+    object-fit: cover;
+    z-index: 0;
+
+    /* мягкое затемнение */
+    filter: brightness(0.6) contrast(1.1);
 }
 
-
-#three-container {
+/* =========================
+   🌫 OVERLAY (DEPTH)
+========================= */
+.overlay {
     position: fixed;
     inset: 0;
     z-index: 1;
+
+    /* градиент + затемнение */
+    background:
+        radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.8)),
+        rgba(0,0,0,0.4);
+}
+
+/* =========================
+   🎮 THREE.JS
+========================= */
+#three-container {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+
+    /* важно: не блокируем UI */
     pointer-events: none;
 }
 
@@ -31,68 +65,78 @@
     display: block;
 }
 
-/* ВИДЕО (ФОН) */
-#bg-video {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: -2;
-}
-
-/* ЗАТЕМНЕНИЕ */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: -1;
-}
-
-/* 🔥 ЦЕНТР — ВАЖНЕЙШИЙ БЛОК */
+/* =========================
+   🧊 HERO (CENTER BLOCK)
+========================= */
 .hero {
     position: absolute;
-
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%);
 
     text-align: center;
-
     color: white;
 
-    z-index: 2;
+    z-index: 10;
 }
 
-/* ЛОГО */
+/* =========================
+   🔥 LOGO (УЛУЧШЕННЫЙ)
+========================= */
 .logo {
-    font-size: 64px;
+    font-size: 80px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 8px;
 
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
-    text-shadow: 0 0 25px rgba(255,255,255,0.25);
+    /* glow + глубина */
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.6),
+        0 0 30px rgba(0,150,255,0.5),
+        0 0 60px rgba(0,150,255,0.3);
+
+    /* лёгкое появление */
+    animation: logoFade 2s ease;
 }
 
-/* ПОДСКАЗКА */
+@keyframes logoFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* =========================
+   💬 HINT
+========================= */
 .hint {
     opacity: 0.6;
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
-/* БАЗА */
-html, body {
-    margin: 0;
-    padding: 0;
+/* =========================
+   ⏳ LOADING
+========================= */
+#loading {
+    position: fixed;
+    inset: 0;
 
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
     background: black;
-}
+    color: white;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+    z-index: 9999;
+
+    /* плавное исчезновение */
+    transition: opacity 0.5s ease;
+}
