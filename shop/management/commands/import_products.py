@@ -1,132 +1,214 @@
-import json  # работа с JSON файлами
-import re  # для очистки цены (регулярки)
-import uuid  # генерация уникального slug
-from django.core.management.base import BaseCommand  # команда Django
-from shop.models import Product, Category  # модели
-from django.utils.text import slugify  # генерация slug
+import json
+import re
+
+from django.core.management.base import BaseCommand
+from django.utils.text import slugify
+from urllib.parse import urljoin
+
+from shop.models import Product, Category
+
+
+BASE_URL = "https://ihomestore.ru"
 
 
 # ------------------------------
-# 🧹 Очистка цены (из строки в число)
+# 🧹 Очистка цены
 # ------------------------------
 def clean_price(price_text):
-    # если цены нет → возвращаем None
     if not price_text:
         return None
 
-    # убираем всё кроме цифр (₽, $, пробелы и т.д.)
-    digits = re.sub(r"[^\d]", "", price_text)
+    digits = re.sub(r"[^\d]", "", str(price_text))
 
-    # превращаем в число
     return int(digits) if digits else None
 
 
+# ------------------------------
+# 🖼 НОРМАЛИЗАЦИЯ КАРТИНОК
+# ------------------------------
+def normalize_image(url):
+    if not url:
+        return None
+
+    url = str(url).strip()
+
+    # фиксим старые пути
+    url = url.replace("/appface/uploads/", "/uploads/")
+
+    # если путь относительный
+    if url.startswith("/"):
+        url = urljoin(BASE_URL, url)
+
+    # защита от мусора
+    if not url.startswith("http"):
+        return None
+
+    return url
+
+
 class Command(BaseCommand):
-    # описание команды (видно в manage.py help)
     help = 'Импорт товаров из JSON'
 
     def handle(self, *args, **kwargs):
+
         # ------------------------------
-        # 📂 Открываем JSON файл
+        # 📂 Читаем JSON
         # ------------------------------
         with open('products.json', encoding='utf-8') as f:
             data = json.load(f)
 
+        created_count = 0
+        updated_count = 0
+
         # ------------------------------
-        # 🔁 Проходим по каждому товару
+        # 🔁 Импорт товаров
         # ------------------------------
         for item in data:
-            # название товара
-            name = item.get("name", "").strip()
 
-            # цены (чистим через функцию)
-            price = clean_price(item.get("price", ""))
-            discount_price = clean_price(item.get("discount_price", ""))
+            try:
+                # ------------------------------
+                # 📝 Название
+                # ------------------------------
+                name = str(item.get("name", "")).strip()
 
-            # картинка
-            image = item.get("image", "")
+                if not name:
+                    continue
 
-            # ------------------------------
-            # 🧠 Определяем категорию по названию
-            # ------------------------------
-            category_name = self.detect_category(name)
+                # ------------------------------
+                # 💰 Цены
+                # ------------------------------
+                price = clean_price(item.get("price"))
+                discount_price = clean_price(
+                    item.get("discount_price")
+                )
 
-            # 🛡 если категория не найдена → ставим дефолт
-            if not category_name:
-                category_name = "Аксессуары"
+                # ------------------------------
+                # 🖼 Фото
+                # ------------------------------
+                image = normalize_image(
+                    item.get("image")
+                )
 
-            # slug категории (URL-safe)
-            category_slug = slugify(category_name)
+                # ------------------------------
+                # 📦 Категория
+                # ------------------------------
+                category_name = self.detect_category(name)
 
-            # если slug не получился (например кириллица)
-            if not category_slug:
-                category_slug = "accessories"
+                category_slug = (
+                    slugify(category_name)
+                    or "accessories"
+                )
 
-            # ------------------------------
-            # 📁 Получаем или создаём категорию
-            # ------------------------------
-            category, _ = Category.objects.get_or_create(
-                slug=category_slug,
-                defaults={"name": category_name}
+                category, _ = Category.objects.get_or_create(
+                    slug=category_slug,
+                    defaults={
+                        "name": category_name
+                    }
+                )
+
+                # ------------------------------
+                # 🔑 SLUG
+                # ------------------------------
+                base_slug = (
+                    slugify(name)[:70]
+                    or "product"
+                )
+
+                # ------------------------------
+                # 💾 СОЗДАНИЕ / ОБНОВЛЕНИЕ
+                # ------------------------------
+                product, created = Product.objects.update_or_create(
+                    slug=base_slug,
+                    defaults={
+                        "name": name[:255],
+                        "category": category,
+                        "price": price or 0,
+                        "discount_price": discount_price,
+                        "description": name[:1000],
+                        "image": image,
+                        "source_url": BASE_URL,
+                        "available": True,
+                    }
+                )
+
+                # ------------------------------
+                # ✅ ЛОГИ
+                # ------------------------------
+                if created:
+                    created_count += 1
+
+                    self.stdout.write(
+                        self.style.SUCCESS(
+                            f"Создан: {name}"
+                        )
+                    )
+
+                else:
+                    updated_count += 1
+
+                    self.stdout.write(
+                        f"Обновлён: {name}"
+                    )
+
+            except Exception as e:
+
+                self.stdout.write(
+                    self.style.ERROR(
+                        f"Ошибка товара {name}: {e}"
+                    )
+                )
+
+        # ------------------------------
+        # 🎉 ГОТОВО
+        # ------------------------------
+        self.stdout.write(
+            self.style.SUCCESS(
+                f"\n🔥 Готово!"
+                f"\nСоздано: {created_count}"
+                f"\nОбновлено: {updated_count}"
             )
-
-            # ------------------------------
-            # 🔥 Генерация уникального slug товара
-            # ------------------------------
-            # базовый slug из названия
-            base_slug = slugify(name)[:60] or "product"
-
-            # добавляем уникальный хвост (чтобы не было дублей)
-            unique_slug = f"{base_slug}-{uuid.uuid4().hex[:6]}"
-
-            # ------------------------------
-            # 💾 Создание товара в базе
-            # ------------------------------
-            Product.objects.create(
-                name=name,
-                slug=unique_slug,
-                category=category,
-                price=price or 0,  # если None → 0
-                discount_price=discount_price,
-                description=name,  # пока используем имя как описание
-                image=image,
-                source_url="https://appface.store",
-            )
-
-            # вывод в консоль
-            self.stdout.write(self.style.SUCCESS(f"Добавлен: {name}"))
-
-        # финальное сообщение
-        self.stdout.write(self.style.SUCCESS("🔥 Импорт завершён!"))
+        )
 
     # ------------------------------
-    # 🧠 Определение категории
+    # 🧠 CATEGORY DETECTOR
     # ------------------------------
     def detect_category(self, name):
-        # приводим к нижнему регистру
+
         name = name.lower()
 
-        # проверяем ключевые слова
         if "iphone" in name:
             return "iPhone"
+
         elif "watch" in name:
             return "Apple Watch"
+
         elif "airpods" in name:
             return "AirPods"
+
         elif "macbook" in name:
             return "MacBook"
+
         elif "ipad" in name:
             return "iPad"
+
         elif "imac" in name:
             return "iMac"
+
         elif "marshall" in name:
             return "Marshall"
+
         elif "dyson" in name:
             return "Dyson"
+
         elif "playstation" in name or "ps5" in name:
             return "PlayStation"
-        elif "яндекс" in name or "станция" in name:
+
+        elif (
+            "яндекс" in name
+            or "станция" in name
+            or "homepod" in name
+        ):
             return "Умные колонки"
+
         else:
-            # дефолтная категория
             return "Аксессуары"
